@@ -2,380 +2,701 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102d29">
+<title>Shanyraq Booking — Premium Events</title>
 
-  <title>Shanyraq Booking — Premium Events</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+<style>
+:root{
+  --green:#102d29;
+  --green2:#245447;
+  --gold:#d9b976;
+  --cream:#f8f6f0;
+  --ink:#1a3029;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Manrope,Arial,sans-serif;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.container{
+  width:calc(100% - 36px);
+  max-width:1180px;
+  margin:auto;
+}
+header{
+  background:var(--green);
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:1px solid #ffffff20;
+}
+.nav{
+  min-height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.logo{
+  font:700 24px "Playfair Display",Georgia,serif;
+  color:white;
+  white-space:nowrap;
+}
+.logo span{color:var(--gold)}
+.links{
+  display:flex;
+  gap:24px;
+  color:white;
+  font-size:13px;
+}
+.links a:hover{color:var(--gold)}
+.actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.languages{
+  display:flex;
+  padding:4px;
+  border-radius:12px;
+  background:#ffffff15;
+  border:1px solid #ffffff25;
+}
+.lang{
+  border:0;
+  background:transparent;
+  color:white;
+  padding:9px 12px;
+  border-radius:9px;
+  font-weight:800;
+  font-size:12px;
+}
+.lang.active{
+  background:var(--gold);
+  color:var(--green);
+}
+.gold-btn{
+  border:0;
+  border-radius:12px;
+  background:var(--gold);
+  color:var(--green);
+  padding:15px 22px;
+  font-weight:800;
+  transition:.25s;
+}
+.gold-btn:hover{
+  background:#efd497;
+  transform:translateY(-2px);
+}
+.hero{
+  position:relative;
+  min-height:650px;
+  color:white;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,
+      rgba(8,30,27,.94),
+      rgba(8,30,27,.60)),
+    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+.hero-content{
+  padding:85px 0 95px;
+  width:100%;
+}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--gold);
+  font-weight:800;
+  text-transform:uppercase;
+}
+.hero h1{
+  font:700 clamp(38px,6vw,76px)/1.13 "Playfair Display",Georgia,serif;
+  max-width:850px;
+  margin:20px 0;
+  overflow-wrap:break-word;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  color:#e0e9e3;
+  max-width:620px;
+  font-size:16px;
+  line-height:1.9;
+}
+.search{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr auto;
+  gap:10px;
+  background:white;
+  border-radius:18px;
+  padding:12px;
+  margin-top:35px;
+  max-width:1050px;
+  box-shadow:0 25px 60px #0005;
+}
+.field{
+  padding:8px 13px;
+  min-width:0;
+}
+.field label{
+  display:block;
+  color:#718079;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+.field select,.field input{
+  display:block;
+  width:100%;
+  min-width:0;
+  border:0;
+  outline:0;
+  background:white;
+  color:#19332c;
+  font-size:14px;
+  padding:5px 0;
+}
+.search button{min-width:120px}
+.stats{
+  display:flex;
+  gap:35px;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+.stat strong{
+  display:block;
+  color:var(--gold);
+  font-size:26px;
+}
+.stat small{
+  color:#d0ddd5;
+  font-size:12px;
+}
+.section{padding:85px 0}
+.section h2{
+  font:700 clamp(30px,4vw,45px) "Playfair Display",Georgia,serif;
+  margin:13px 0 20px;
+}
+.muted{
+  color:#718079;
+  font-size:14px;
+  line-height:1.8;
+}
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+  margin-top:32px;
+}
+.category{
+  min-height:285px;
+  border-radius:20px;
+  position:relative;
+  overflow:hidden;
+  background-position:center;
+  background-size:cover;
+  display:flex;
+  align-items:flex-end;
+  padding:22px;
+  color:white;
+  transition:.3s;
+}
+.category:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,#061c19f0,transparent 85%);
+}
+.category:hover{transform:translateY(-7px)}
+.category div{position:relative}
+.category h3{
+  font-size:20px;
+  margin:0 0 8px;
+}
+.category p{
+  font-size:12px;
+  margin:0;
+  color:#e4eae5;
+}
+.cat1{
+  background-image:url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=700&q=80");
+}
+.cat2{
+  background-image:url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80");
+}
+.cat3{
+  background-image:url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=80");
+}
+.cat4{
+  background-image:url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80");
+}
+.dark{
+  background:var(--green);
+  color:white;
+}
+.dark .muted{color:#b7c8c1}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  margin-top:30px;
+}
+.card{
+  background:white;
+  color:var(--ink);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 35px #00000015;
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card-img{
+  height:210px;
+  background-position:center;
+  background-size:cover;
+  position:relative;
+}
+.card-img span{
+  position:absolute;
+  top:14px;
+  left:14px;
+  background:white;
+  border-radius:20px;
+  padding:8px 12px;
+  font-size:11px;
+  font-weight:800;
+}
+.card-body{padding:22px}
+.card-body h3{margin:0 0 10px}
+.card-body p{
+  color:#718079;
+  font-size:13px;
+}
+.card-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:22px;
+}
+.price{
+  color:var(--green2);
+  font-size:13px;
+  font-weight:800;
+}
+.small-btn{
+  background:var(--green);
+  color:white;
+  border:0;
+  padding:12px 15px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:800;
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  margin-top:30px;
+}
+.step{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+}
+.number{
+  color:var(--gold);
+  font:700 45px Georgia,serif;
+}
+.step h3{margin:16px 0}
+.cta{
+  background:linear-gradient(120deg,#245447,#102d29);
+  color:white;
+  border-radius:24px;
+  padding:55px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.cta h2{margin:12px 0}
+.cta p{
+  color:#c5d3cc;
+  line-height:1.8;
+}
+footer{
+  background:#081e1b;
+  color:#b8c6c0;
+  padding:35px 0;
+  font-size:12px;
+}
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+@media(max-width:950px){
+  .links{display:none}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .search{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .container{width:calc(100% - 32px)}
+  .nav{min-height:68px}
+  .logo{font-size:19px}
+  .lang{padding:8px 10px}
+  .nav-partner{display:none}
+  .hero{min-height:auto}
+  .hero-content{padding:65px 0 75px}
+  .hero h1{
+    font-size:clamp(35px,9vw,48px);
+    line-height:1.15;
+  }
+  .hero p{font-size:14px}
+  .search{
+    grid-template-columns:minmax(0,1fr);
+    gap:4px;
+    padding:13px;
+    border-radius:17px;
+  }
+  .field{
+    padding:10px;
+    border-bottom:1px solid #eee;
+  }
+  .search button{
+    width:100%;
+    margin-top:7px;
+  }
+  .stats{gap:22px}
+  .stat strong{font-size:22px}
+  .section{padding:60px 0}
+  .categories,.cards,.steps{
+    grid-template-columns:minmax(0,1fr);
+  }
+  .category{min-height:240px}
+  .cta{
+    padding:30px 24px;
+    display:block;
+  }
+  .cta button{margin-top:18px}
+}
+</style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="container nav">
+<header>
+<div class="container nav">
+  <a class="logo" href="index.html">
+    ✦ SHANYRAQ<span>.</span>
+  </a>
 
-    <a href="index.html" class="logo">
-      ✦ SHANYRAQ<span>.</span>
-    </a>
+  <nav class="links">
+    <a href="venues.html" data-kk="Тойханалар" data-ru="Банкетные залы">Тойханалар</a>
+    <a href="#services" data-kk="Қызметтер" data-ru="Услуги">Қызметтер</a>
+    <a href="#how" data-kk="Қалай жұмыс істейді?" data-ru="Как это работает?">Қалай жұмыс істейді?</a>
+  </nav>
 
-    <nav class="navigation">
-      <a href="venues.html" data-i18n="navVenues">
-        Тойханалар
-      </a>
-      <a href="#services" data-i18n="navServices">
-        Қызметтер
-      </a>
-      <a href="#how" data-i18n="navHow">
-        Қалай жұмыс істейді?
-      </a>
-    </nav>
-
-    <div class="nav-actions">
-      <div class="language-switch">
-        <button id="langKk" class="lang active"
-                type="button">KZ</button>
-        <button id="langRu" class="lang"
-                type="button">RU</button>
-      </div>
-
-      <a href="#partner" class="partner-btn"
-         data-i18n="addService">
-        + Қызмет қосу
-      </a>
+  <div class="actions">
+    <div class="languages">
+      <button class="lang active" id="kz" type="button">KZ</button>
+      <button class="lang" id="ru" type="button">RU</button>
     </div>
-
+    <a href="#partner" class="gold-btn nav-partner"
+       data-kk="+ Қызмет қосу"
+       data-ru="+ Добавить услугу">+ Қызмет қосу</a>
   </div>
+</div>
 </header>
 
 <main>
 
 <section class="hero">
-  <div class="container hero-content">
-
-    <div class="eyebrow" data-i18n="eyebrow">
-      ✦ Қазақстандағы мерекелік платформа
-    </div>
-
-    <h1 data-i18n="heroTitle">
-      Ерекше сәттер осында басталады.
-    </h1>
-
-    <p data-i18n="heroText">
-      Армандаған тойыңызға арналған
-      үздік орындар мен мамандарды
-      бір жерден табыңыз.
-    </p>
-
-    <form id="searchForm" class="search-box">
-
-      <div class="search-field">
-        <label data-i18n="cityLabel">ҚАЛА</label>
-        <select id="city">
-          <option value="Тараз">Тараз</option>
-          <option value="Алматы">Алматы</option>
-          <option value="Астана">Астана</option>
-          <option value="Шымкент">Шымкент</option>
-        </select>
-      </div>
-
-      <div class="search-field">
-        <label data-i18n="serviceLabel">
-          ҚЫЗМЕТ ТҮРІ
-        </label>
-        <select id="service">
-          <option value="venues" data-i18n="venues">
-            Тойханалар
-          </option>
-          <option value="hosts" data-i18n="hosts">
-            Асабалар
-          </option>
-          <option value="photo" data-i18n="photo">
-            Фотографтар
-          </option>
-          <option value="decor" data-i18n="decor">
-            Безендіру
-          </option>
-        </select>
-      </div>
-
-      <div class="search-field">
-        <label data-i18n="dateLabel">
-          ІС-ШАРА КҮНІ
-        </label>
-        <input id="date" type="date">
-      </div>
-
-      <button class="gold-btn" type="submit"
-              data-i18n="search">
-        Іздеу →
-      </button>
-
-    </form>
-
-    <div class="stats">
-      <div class="stat">
-        <strong>01</strong>
-        <small data-i18n="statOne">
-          Бірыңғай платформа
-        </small>
-      </div>
-
-      <div class="stat">
-        <strong>24/7</strong>
-        <small data-i18n="statTwo">
-          Қызметтерді қарау
-        </small>
-      </div>
-
-      <div class="stat">
-        <strong>100%</strong>
-        <small data-i18n="statThree">
-          Тегін демо
-        </small>
-      </div>
-    </div>
-
+<div class="container hero-content">
+  <div class="eyebrow"
+       data-kk="✦ Қазақстандағы мерекелік платформа"
+       data-ru="✦ Платформа мероприятий Казахстана">
+    ✦ Қазақстандағы мерекелік платформа
   </div>
+
+  <h1 data-kk="Ерекше сәттер <span>осында</span> басталады."
+      data-ru="Особенные моменты начинаются <span>здесь.</span>">
+    Ерекше сәттер <span>осында</span> басталады.
+  </h1>
+
+  <p data-kk="Армандаған тойыңызға арналған үздік орындар мен мамандарды бір жерден табыңыз."
+     data-ru="Найдите лучшие площадки и специалистов для вашего торжества в одном месте.">
+    Армандаған тойыңызға арналған үздік орындар мен мамандарды бір жерден табыңыз.
+  </p>
+
+  <form class="search" id="searchForm">
+    <div class="field">
+      <label data-kk="ҚАЛА" data-ru="ГОРОД">ҚАЛА</label>
+      <select id="city">
+        <option value="Тараз">Тараз</option>
+        <option value="Алматы">Алматы</option>
+        <option value="Астана">Астана</option>
+        <option value="Шымкент">Шымкент</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label data-kk="ҚЫЗМЕТ ТҮРІ" data-ru="ТИП УСЛУГИ">ҚЫЗМЕТ ТҮРІ</label>
+      <select id="service">
+        <option value="venues" data-kk="Тойханалар" data-ru="Банкетные залы">Тойханалар</option>
+        <option value="hosts" data-kk="Асабалар" data-ru="Ведущие">Асабалар</option>
+        <option value="photo" data-kk="Фотографтар" data-ru="Фотографы">Фотографтар</option>
+        <option value="decor" data-kk="Безендіру" data-ru="Оформление">Безендіру</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label data-kk="ІС-ШАРА КҮНІ" data-ru="ДАТА МЕРОПРИЯТИЯ">ІС-ШАРА КҮНІ</label>
+      <input id="date" type="date">
+    </div>
+
+    <button class="gold-btn" type="submit"
+            data-kk="Іздеу →" data-ru="Поиск →">Іздеу →</button>
+  </form>
+
+  <div class="stats">
+    <div class="stat">
+      <strong>01</strong>
+      <small data-kk="Бірыңғай платформа" data-ru="Единая платформа">Бірыңғай платформа</small>
+    </div>
+    <div class="stat">
+      <strong>24/7</strong>
+      <small data-kk="Қызметтерді қарау" data-ru="Просмотр услуг">Қызметтерді қарау</small>
+    </div>
+    <div class="stat">
+      <strong>100%</strong>
+      <small data-kk="Тегін демо" data-ru="Бесплатное демо">Тегін демо</small>
+    </div>
+  </div>
+</div>
 </section>
 
 <section class="section" id="services">
-  <div class="container">
+<div class="container">
+  <div class="eyebrow" data-kk="БАРЛЫҒЫ БІР ЖЕРДЕ" data-ru="ВСЁ В ОДНОМ МЕСТЕ">БАРЛЫҒЫ БІР ЖЕРДЕ</div>
+  <h2 data-kk="Қызметтер әлемі" data-ru="Мир услуг">Қызметтер әлемі</h2>
+  <p class="muted" data-kk="Ерекше күніңізге қажет нәрсенің бәрі." data-ru="Всё необходимое для вашего особенного дня.">Ерекше күніңізге қажет нәрсенің бәрі.</p>
 
-    <div class="eyebrow" data-i18n="allInOne">
-      БАРЛЫҒЫ БІР ЖЕРДЕ
-    </div>
+  <div class="categories">
+    <a href="venues.html" class="category cat1">
+      <div>
+        <h3 data-kk="🏛️ Тойханалар" data-ru="🏛️ Банкетные залы">🏛️ Тойханалар</h3>
+        <p data-kk="Керемет мерекелік орындар →" data-ru="Лучшие площадки для праздника →">Керемет мерекелік орындар →</p>
+      </div>
+    </a>
 
-    <h2 data-i18n="servicesTitle">
-      Қызметтер әлемі
-    </h2>
+    <a href="#popular" class="category cat2">
+      <div>
+        <h3 data-kk="🎤 Асабалар" data-ru="🎤 Ведущие">🎤 Асабалар</h3>
+        <p data-kk="Кәсіби жүргізушілер →" data-ru="Профессиональные ведущие →">Кәсіби жүргізушілер →</p>
+      </div>
+    </a>
 
-    <p class="muted" data-i18n="servicesText">
-      Ерекше күніңізге қажет нәрсенің бәрі.
-    </p>
+    <a href="#popular" class="category cat3">
+      <div>
+        <h3 data-kk="📸 Фотографтар" data-ru="📸 Фотографы">📸 Фотографтар</h3>
+        <p data-kk="Естен кетпес кадрлар →" data-ru="Незабываемые кадры →">Естен кетпес кадрлар →</p>
+      </div>
+    </a>
 
-    <div class="category-grid">
-
-      <a href="venues.html" class="category cat1">
-        <div class="category-content">
-          <h3 data-i18n="venues">🏛️ Тойханалар</h3>
-          <p data-i18n="venuesDesc">
-            Керемет мерекелік орындар →
-          </p>
-        </div>
-      </a>
-
-      <a href="#popular" class="category cat2">
-        <div class="category-content">
-          <h3 data-i18n="hosts">🎤 Асабалар</h3>
-          <p data-i18n="hostsDesc">
-            Кәсіби жүргізушілер →
-          </p>
-        </div>
-      </a>
-
-      <a href="#popular" class="category cat3">
-        <div class="category-content">
-          <h3 data-i18n="photo">📸 Фотографтар</h3>
-          <p data-i18n="photoDesc">
-            Естен кетпес кадрлар →
-          </p>
-        </div>
-      </a>
-
-      <a href="#popular" class="category cat4">
-        <div class="category-content">
-          <h3 data-i18n="decor">✨ Безендіру</h3>
-          <p data-i18n="decorDesc">
-            Сәнді декорациялар →
-          </p>
-        </div>
-      </a>
-
-    </div>
+    <a href="#popular" class="category cat4">
+      <div>
+        <h3 data-kk="✨ Безендіру" data-ru="✨ Оформление">✨ Безендіру</h3>
+        <p data-kk="Сәнді декорациялар →" data-ru="Стильные декорации →">Сәнді декорациялар →</p>
+      </div>
+    </a>
   </div>
+</div>
 </section>
 
-<section class="section dark-section" id="popular">
-  <div class="container">
+<section class="section dark" id="popular">
+<div class="container">
+  <div class="eyebrow" data-kk="АРНАЙЫ ТАҢДАУ" data-ru="НАШ ВЫБОР">АРНАЙЫ ТАҢДАУ</div>
+  <h2 data-kk="Танымал ұсыныстар" data-ru="Популярные предложения">Танымал ұсыныстар</h2>
+  <p class="muted" data-kk="Төмендегі ұсыныстар — демонстрациялық үлгілер." data-ru="Предложения ниже — демонстрационные примеры.">Төмендегі ұсыныстар — демонстрациялық үлгілер.</p>
 
-    <div class="eyebrow" data-i18n="special">
-      АРНАЙЫ ТАҢДАУ
-    </div>
-
-    <h2 data-i18n="popularTitle">
-      Танымал ұсыныстар
-    </h2>
-
-    <p class="muted" data-i18n="demoNote">
-      Бұл ұсыныстар — демонстрациялық үлгілер.
-    </p>
-
-    <div class="cards">
-
-      <article class="card">
-        <div class="card-image image-one">
-          <span class="demo-tag">✦ DEMO</span>
+  <div class="cards">
+    <article class="card">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80')">
+        <span>✦ DEMO</span>
+      </div>
+      <div class="card-body">
+        <h3>Royal Garden</h3>
+        <p>📍 Тараз · Банкет залы</p>
+        <div class="card-bottom">
+          <span class="price" data-kk="Бағасы нақтыланады" data-ru="Цена уточняется">Бағасы нақтыланады</span>
+          <a class="small-btn" href="venues.html" data-kk="Қарау →" data-ru="Смотреть →">Қарау →</a>
         </div>
-        <div class="card-body">
-          <h3>Royal Garden</h3>
-          <p>📍 Тараз · Банкет залы</p>
-          <div class="card-bottom">
-            <span class="price" data-i18n="pricePending">
-              Бағасы нақтыланады
-            </span>
-            <a href="venues.html" class="small-btn"
-               data-i18n="view">
-              Қарау →
-            </a>
-          </div>
-        </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="card">
-        <div class="card-image image-two">
-          <span class="demo-tag">✦ DEMO</span>
+    <article class="card">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80')">
+        <span>✦ DEMO</span>
+      </div>
+      <div class="card-body">
+        <h3>Event Host</h3>
+        <p data-kk="🎤 Асаба · Үлгі профиль" data-ru="🎤 Ведущий · Демо-профиль">🎤 Асаба · Үлгі профиль</p>
+        <div class="card-bottom">
+          <span class="price" data-kk="Бағасы нақтыланады" data-ru="Цена уточняется">Бағасы нақтыланады</span>
+          <button class="small-btn demo-btn" data-kk="Қарау →" data-ru="Смотреть →">Қарау →</button>
         </div>
-        <div class="card-body">
-          <h3>Event Host</h3>
-          <p data-i18n="hostProfile">
-            🎤 Асаба · Үлгі профиль
-          </p>
-          <div class="card-bottom">
-            <span class="price" data-i18n="pricePending">
-              Бағасы нақтыланады
-            </span>
-            <button class="small-btn demo-btn"
-                    data-i18n="view">
-              Қарау →
-            </button>
-          </div>
-        </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="card">
-        <div class="card-image image-three">
-          <span class="demo-tag">✦ DEMO</span>
+    <article class="card">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80')">
+        <span>✦ DEMO</span>
+      </div>
+      <div class="card-body">
+        <h3>Moment Studio</h3>
+        <p data-kk="📸 Фото және видео · Үлгі" data-ru="📸 Фото и видео · Демо">📸 Фото және видео · Үлгі</p>
+        <div class="card-bottom">
+          <span class="price" data-kk="Бағасы нақтыланады" data-ru="Цена уточняется">Бағасы нақтыланады</span>
+          <button class="small-btn demo-btn" data-kk="Қарау →" data-ru="Смотреть →">Қарау →</button>
         </div>
-        <div class="card-body">
-          <h3>Moment Studio</h3>
-          <p data-i18n="photoProfile">
-            📸 Фото және видео · Үлгі
-          </p>
-          <div class="card-bottom">
-            <span class="price" data-i18n="pricePending">
-              Бағасы нақтыланады
-            </span>
-            <button class="small-btn demo-btn"
-                    data-i18n="view">
-              Қарау →
-            </button>
-          </div>
-        </div>
-      </article>
-
-    </div>
+      </div>
+    </article>
   </div>
+</div>
 </section>
 
 <section class="section" id="how">
-  <div class="container">
+<div class="container">
+  <div class="eyebrow" data-kk="ОҢАЙ ӘРІ ЫҢҒАЙЛЫ" data-ru="ПРОСТО И УДОБНО">ОҢАЙ ӘРІ ЫҢҒАЙЛЫ</div>
+  <h2 data-kk="Қалай жұмыс істейді?" data-ru="Как это работает?">Қалай жұмыс істейді?</h2>
 
-    <div class="eyebrow" data-i18n="easy">
-      ОҢАЙ ӘРІ ЫҢҒАЙЛЫ
+  <div class="steps">
+    <div class="step">
+      <div class="number">01</div>
+      <h3 data-kk="Қызметті табыңыз" data-ru="Найдите услугу">Қызметті табыңыз</h3>
+      <p class="muted" data-kk="Қалаңызды, қызмет түрін және күнді таңдаңыз." data-ru="Выберите город, услугу и дату.">Қалаңызды, қызмет түрін және күнді таңдаңыз.</p>
     </div>
 
-    <h2 data-i18n="howTitle">
-      Қалай жұмыс істейді?
-    </h2>
+    <div class="step">
+      <div class="number">02</div>
+      <h3 data-kk="Салыстырыңыз" data-ru="Сравните">Салыстырыңыз</h3>
+      <p class="muted" data-kk="Фотосуреттер мен бағаларды салыстырыңыз." data-ru="Сравните фотографии и цены.">Фотосуреттер мен бағаларды салыстырыңыз.</p>
+    </div>
 
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-number">01</div>
-        <h3 data-i18n="stepOneTitle">
-          Қызметті табыңыз
-        </h3>
-        <p class="muted" data-i18n="stepOneText">
-          Қалаңызды, қызмет түрін және күнді таңдаңыз.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">02</div>
-        <h3 data-i18n="stepTwoTitle">
-          Салыстырыңыз
-        </h3>
-        <p class="muted" data-i18n="stepTwoText">
-          Фотосуреттер мен бағаларды салыстырыңыз.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">03</div>
-        <h3 data-i18n="stepThreeTitle">
-          Брондаңыз
-        </h3>
-        <p class="muted" data-i18n="stepThreeText">
-          Болашақта онлайн брондау мүмкіндігі қосылады.
-        </p>
-      </div>
-
+    <div class="step">
+      <div class="number">03</div>
+      <h3 data-kk="Брондаңыз" data-ru="Забронируйте">Брондаңыз</h3>
+      <p class="muted" data-kk="Онлайн брондау жүйесі келесі кезеңде қосылады." data-ru="Онлайн-бронирование появится на следующем этапе.">Онлайн брондау жүйесі келесі кезеңде қосылады.</p>
     </div>
   </div>
+</div>
 </section>
 
 <section class="section" id="partner">
-  <div class="container">
-    <div class="cta">
-
-      <div>
-        <div class="eyebrow" data-i18n="partnerEyebrow">
-          БІЗБЕН БІРГЕ ДАМЫҢЫЗ
-        </div>
-
-        <h2 data-i18n="partnerTitle">
-          Өз қызметіңізді танытыңыз
-        </h2>
-
-        <p data-i18n="partnerText">
-          Тойхана, асаба немесе фотографсыз ба?
-          Болашақта өз профиліңізді ашып,
-          клиенттер таба аласыз.
-        </p>
-      </div>
-
-      <button class="gold-btn" id="partnerButton"
-              data-i18n="partnerButton">
-        Серіктес болу →
-      </button>
-
+<div class="container">
+  <div class="cta">
+    <div>
+      <div class="eyebrow" data-kk="БІЗБЕН БІРГЕ ДАМЫҢЫЗ" data-ru="РАЗВИВАЙТЕСЬ С НАМИ">БІЗБЕН БІРГЕ ДАМЫҢЫЗ</div>
+      <h2 data-kk="Өз қызметіңізді танытыңыз" data-ru="Расскажите о своих услугах">Өз қызметіңізді танытыңыз</h2>
+      <p data-kk="Тойхана, асаба немесе фотографсыз ба? Болашақта өз профиліңізді ашып, клиенттер таба аласыз." data-ru="У вас банкетный зал? Вы ведущий или фотограф? В будущем вы сможете создать профиль и находить клиентов.">Тойхана, асаба немесе фотографсыз ба? Болашақта өз профиліңізді ашып, клиенттер таба аласыз.</p>
     </div>
+    <button class="gold-btn" id="partnerBtn" data-kk="Серіктес болу →" data-ru="Стать партнёром →">Серіктес болу →</button>
   </div>
+</div>
 </section>
 
 </main>
 
 <footer>
-  <div class="container footer-row">
-    <div>
-      <div class="logo">✦ SHANYRAQ<span>.</span></div>
-      <p data-i18n="footerText">
-        Ерекше сәттер осында басталады.
-      </p>
-    </div>
-
-    <div>© 2026 Shanyraq Booking</div>
+<div class="container footer-row">
+  <div>
+    <div class="logo">✦ SHANYRAQ<span>.</span></div>
+    <p data-kk="Ерекше сәттер осында басталады." data-ru="Особенные моменты начинаются здесь.">Ерекше сәттер осында басталады.</p>
   </div>
+  <div>© 2026 Shanyraq Booking · Prototype</div>
+</div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+let currentLang = localStorage.getItem("shanyraq_lang") || "kk";
+
+function setLanguage(lang){
+  currentLang = lang;
+  localStorage.setItem("shanyraq_lang",lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-kk][data-ru]").forEach(el=>{
+    el.innerHTML = el.getAttribute("data-"+lang);
+  });
+
+  document.getElementById("kz").classList.toggle("active",lang==="kk");
+  document.getElementById("ru").classList.toggle("active",lang==="ru");
+}
+
+document.getElementById("kz").onclick=()=>setLanguage("kk");
+document.getElementById("ru").onclick=()=>setLanguage("ru");
+
+setLanguage(currentLang);
+
+const dateInput=document.getElementById("date");
+const now=new Date();
+const today=new Date(now.getTime()-now.getTimezoneOffset()*60000)
+  .toISOString().slice(0,10);
+dateInput.min=today;
+
+document.getElementById("searchForm").addEventListener("submit",e=>{
+  e.preventDefault();
+
+  const city=document.getElementById("city").value;
+  const service=document.getElementById("service").value;
+  const date=dateInput.value;
+
+  if(!date){
+    alert(currentLang==="kk"?
+      "Алдымен іс-шара күнін таңдаңыз!":
+      "Сначала выберите дату мероприятия!");
+    return;
+  }
+
+  if(service==="venues"){
+    const params=new URLSearchParams({city,date});
+    location.href="venues.html?"+params.toString();
+  }else{
+    alert(currentLang==="kk"?
+      "Бұл қызмет келесі кезеңде қосылады.":
+      "Эта услуга появится на следующем этапе.");
+  }
+});
+
+document.querySelectorAll(".demo-btn").forEach(btn=>{
+  btn.onclick=()=>alert(currentLang==="kk"?
+    "Бұл әзірге демо профиль.":
+    "Это демонстрационный профиль.");
+});
+
+document.getElementById("partnerBtn").onclick=()=>{
+  alert(currentLang==="kk"?
+    "Серіктестерді тіркеу жүйесін келесі кезеңде қосамыз.":
+    "Регистрацию партнёров добавим на следующем этапе.");
+};
+</script>
+
 </body>
 </html>
