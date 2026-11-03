@@ -4,18 +4,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#102d29">
-<title>Royal Garden | Shanyraq Booking</title>
+<title>Shanyraq Booking | Venue</title>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
- --dark:#102d29;--green:#245447;
- --gold:#d8b876;--cream:#f8f6f0;
- --ink:#19352e;--muted:#718079;
+ --dark:#102d29;
+ --green:#245447;
+ --gold:#d8b876;
+ --cream:#f8f6f0;
+ --ink:#19352e;
+ --muted:#718079;
 }
 *{box-sizing:border-box}
 body{
- margin:0;background:var(--cream);color:var(--ink);
+ margin:0;background:var(--cream);
+ color:var(--ink);
  font-family:Manrope,Arial,sans-serif;
 }
 button,input{font:inherit}
@@ -27,115 +31,128 @@ header{
  position:sticky;top:0;z-index:20;
 }
 .nav{
- display:flex;align-items:center;
- justify-content:space-between;gap:12px;
- min-height:76px;
+ min-height:75px;display:flex;
+ align-items:center;justify-content:space-between;
+ gap:10px;
 }
 .logo{
- font:700 24px "Playfair Display",Georgia,serif;
+ font:700 23px "Playfair Display",Georgia,serif;
  white-space:nowrap;
 }
 .logo span{color:var(--gold)}
-.nav-right{display:flex;align-items:center;gap:10px}
+.nav-right{display:flex;align-items:center;gap:9px}
 .languages{
  display:flex;background:#ffffff18;
- border-radius:12px;padding:4px;
+ padding:4px;border-radius:12px;
 }
 .lang{
- border:0;background:none;color:white;
- border-radius:9px;padding:9px 12px;font-weight:800;
+ border:0;background:transparent;color:white;
+ padding:9px 12px;border-radius:9px;
+ font-weight:800;
 }
 .lang.active{background:var(--gold);color:var(--dark)}
 .back{
  border:1px solid #ffffff45;
- border-radius:10px;padding:10px;font-size:12px;
+ border-radius:10px;padding:10px;
+ font-size:12px;
 }
 .breadcrumb{
- padding:25px 0;font-size:13px;color:var(--muted);
+ padding:24px 0;color:var(--muted);
+ font-size:13px;
 }
 .breadcrumb a{color:var(--green)}
 h1,h2{font-family:"Playfair Display",Georgia,serif}
-h1{font-size:clamp(35px,5vw,56px);margin:12px 0}
+h1{
+ font-size:clamp(35px,5vw,58px);
+ margin:12px 0;
+}
 .eyebrow{
- color:#9a7737;font-weight:800;
- letter-spacing:2px;font-size:11px;
+ color:#9a7737;font-size:11px;
+ letter-spacing:2px;font-weight:800;
 }
 .subtitle{color:var(--muted);font-size:14px}
 .gallery{
- display:grid;grid-template-columns:2fr 1fr;
+ display:grid;
+ grid-template-columns:2fr 1fr;
  grid-template-rows:180px 180px;
  gap:12px;margin:30px 0;
 }
 .gallery img{
- width:100%;height:100%;object-fit:cover;
- border-radius:16px;cursor:pointer;
+ width:100%;height:100%;
+ object-fit:cover;border-radius:17px;
+ cursor:pointer;
 }
 .gallery img:first-child{grid-row:span 2}
 .layout{
- display:grid;grid-template-columns:minmax(0,1fr) 345px;
- gap:30px;align-items:start;margin-bottom:70px;
+ display:grid;
+ grid-template-columns:minmax(0,1fr) 345px;
+ gap:30px;align-items:start;
+ margin-bottom:65px;
 }
 .panel{
  background:white;border-radius:20px;
- padding:26px;box-shadow:0 10px 35px #102d2910;
- margin-bottom:20px;
+ padding:26px;margin-bottom:20px;
+ box-shadow:0 10px 35px #102d2910;
 }
 .panel h2{font-size:27px;margin:0 0 18px}
+.description{
+ color:#61716a;font-size:14px;
+ line-height:1.9;
+}
 .features{
- display:grid;grid-template-columns:repeat(2,1fr);
- gap:14px;
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:12px;
 }
 .feature{
+ background:#f5f7f3;
  padding:17px;border-radius:13px;
- background:#f5f7f3;font-size:13px;
+ font-size:13px;
 }
-.feature strong{display:block;margin-top:7px}
-.description{
- font-size:14px;line-height:1.9;color:#61716a;
-}
-.booking-panel{position:sticky;top:96px}
+.feature strong{display:block;margin-top:8px}
+.booking-panel{position:sticky;top:95px}
 .price{
- font-size:32px;font-weight:800;color:var(--green);
+ font-size:32px;font-weight:800;
+ color:var(--green);
 }
 .price small{font-size:12px;color:var(--muted)}
 .field{margin:20px 0}
 .field label{
- display:block;font-size:12px;font-weight:800;
- margin-bottom:9px;
+ display:block;font-size:12px;
+ font-weight:800;margin-bottom:9px;
 }
 .field input{
- width:100%;border:1px solid #dce5de;
+ width:100%;min-width:0;
+ border:1px solid #dce5de;
  border-radius:11px;padding:13px;
- background:white;min-width:0;
 }
 .total{
  display:flex;justify-content:space-between;
- gap:12px;padding:17px 0;
+ align-items:center;gap:10px;
  border-top:1px solid #eee;
- font-size:14px;
+ padding:18px 0;font-size:14px;
 }
 .total strong{font-size:19px}
 .gold-btn{
  width:100%;border:0;border-radius:12px;
- background:var(--gold);color:var(--dark);
- padding:16px;font-weight:800;
+ padding:16px;background:var(--gold);
+ color:var(--dark);font-weight:800;
 }
 .gold-btn:hover{background:#edcf91}
 .hint{
- color:var(--muted);font-size:11px;
- line-height:1.7;margin-top:13px;
+ font-size:12px;color:var(--muted);
+ line-height:1.7;
 }
 .calendar-header{
- display:flex;align-items:center;
- justify-content:space-between;gap:10px;
- margin:18px 0;
+ display:flex;justify-content:space-between;
+ align-items:center;margin:18px 0;
 }
 .calendar-header button{
- background:#f0f3ee;border:0;
+ background:#edf2eb;border:0;
  border-radius:9px;padding:10px 14px;
 }
 .calendar-grid{
- display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
+ display:grid;
+ grid-template-columns:repeat(7,minmax(0,1fr));
  gap:5px;
 }
 .weekday{
@@ -143,21 +160,20 @@ h1{font-size:clamp(35px,5vw,56px);margin:12px 0}
  color:var(--muted);padding:9px 0;
 }
 .day{
- min-height:40px;border:0;border-radius:9px;
- background:#f1f4ef;color:var(--ink);
+ min-height:40px;border:0;
+ border-radius:9px;background:#f1f4ef;
+ color:var(--ink);
 }
-.day:hover:not(:disabled){background:#e2eadd}
-.day.selected{
- background:var(--dark);color:white;
-}
+.day.selected{background:var(--dark);color:white}
 .day.booked{
  background:#ffe6e6;color:#a33;
  text-decoration:line-through;
 }
-.day:disabled{opacity:.45;cursor:not-allowed}
+.day:disabled{opacity:.5;cursor:not-allowed}
 .legend{
  display:flex;flex-wrap:wrap;gap:15px;
- margin-top:17px;font-size:11px;color:var(--muted);
+ margin-top:18px;font-size:11px;
+ color:var(--muted);
 }
 .dot{
  display:inline-block;width:9px;height:9px;
@@ -172,35 +188,37 @@ dialog{
  padding:25px;box-shadow:0 30px 100px #0005;
 }
 dialog::backdrop{background:#071d19aa}
+dialog label{
+ display:block;font-size:12px;
+ font-weight:800;margin:15px 0 8px;
+}
 dialog input{
  width:100%;padding:13px;
  border:1px solid #d5ddd7;border-radius:10px;
 }
-dialog label{
- display:block;font-size:12px;font-weight:800;
- margin:15px 0 8px;
+.dialog-actions{
+ display:flex;gap:10px;margin-top:20px;
 }
-.dialog-actions{display:flex;gap:10px;margin-top:20px}
 .dialog-actions button{flex:1}
 .close-btn{
  background:#edf0eb;border:0;
  border-radius:10px;padding:13px;
 }
+#lightbox{
+ max-width:95vw;max-height:95vh;
+ padding:12px;background:var(--dark);
+}
+#lightbox img{
+ display:block;max-width:90vw;
+ max-height:80vh;object-fit:contain;
+}
+#closeLightbox{
+ display:block;margin:0 0 10px auto;
+ padding:8px 15px;
+}
 footer{
  background:#081e1b;color:#b8c6c0;
  padding:30px;text-align:center;font-size:12px;
-}
-#lightbox{
- border:0;padding:12px;background:#102d29;
- max-width:95vw;max-height:95vh;
-}
-#lightbox img{
- display:block;max-width:90vw;max-height:80vh;
- object-fit:contain;
-}
-#lightbox button{
- display:block;margin:0 0 10px auto;
- padding:8px 15px;
 }
 @media(max-width:800px){
  .layout{grid-template-columns:1fr}
@@ -211,20 +229,19 @@ footer{
  .lang{padding:8px}
  .back{font-size:10px;padding:8px}
  .gallery{
-  grid-template-rows:220px 105px;
   grid-template-columns:1fr 1fr;
+  grid-template-rows:220px 105px;
  }
  .gallery img:first-child{
   grid-column:span 2;grid-row:span 1;
  }
  .panel{padding:20px}
- .features{gap:9px}
  .feature{padding:12px}
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
  <div class="wrap nav">
   <a href="index.html" class="logo">
@@ -243,147 +260,138 @@ footer{
 </header>
 
 <main class="wrap">
-
-<div class="breadcrumb">
- <a href="index.html"
-  data-kk="Басты бет"
-  data-ru="Главная">Басты бет</a>
- /
- <a href="venues.html"
-  data-kk="Тойханалар"
-  data-ru="Банкетные залы">Тойханалар</a>
- / Royal Garden
-</div>
-
-<div class="eyebrow">✦ SHANYRAQ PREMIUM</div>
-<h1>Royal Garden</h1>
-<p class="subtitle"
- data-kk="📍 Тараз, Қазақстан · Демонстрациялық тойхана"
- data-ru="📍 Тараз, Казахстан · Демонстрационный банкетный зал">
- 📍 Тараз, Қазақстан · Демонстрациялық тойхана
-</p>
-
-<div class="gallery">
- <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=85" alt="Зал" loading="lazy">
- <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=80" alt="Интерьер" loading="lazy">
- <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Мереке" loading="lazy">
-</div>
-
-<div class="layout">
- <div>
-
-  <section class="panel">
-   <h2 data-kk="Тойхана туралы"
-       data-ru="О банкетном зале">Тойхана туралы</h2>
-   <p class="description"
-    data-kk="Royal Garden — Shanyraq Booking жобасының демонстрациялық тойханасы. Бұл бетте болашақ серіктестердің фотосуреттері, қызметтері, бағалары және бос күндері қалай көрсетілетінін көруге болады."
-    data-ru="Royal Garden — демонстрационный банкетный зал проекта Shanyraq Booking. Здесь показано, как будут выглядеть фотографии, услуги, цены и свободные даты будущих партнёров.">
-    Royal Garden — Shanyraq Booking жобасының
-    демонстрациялық тойханасы.
-   </p>
-  </section>
-
-  <section class="panel">
-   <h2 data-kk="Мүмкіндіктер"
-       data-ru="Возможности">Мүмкіндіктер</h2>
-   <div class="features">
-    <div class="feature">👥
-     <strong data-kk="300 қонаққа дейін"
-      data-ru="До 300 гостей">300 қонаққа дейін</strong>
-    </div>
-    <div class="feature">🚗
-     <strong data-kk="Автотұрақ"
-      data-ru="Парковка">Автотұрақ</strong>
-    </div>
-    <div class="feature">🎵
-     <strong data-kk="Музыка алаңы"
-      data-ru="Музыкальная площадка">Музыка алаңы</strong>
-    </div>
-    <div class="feature">❄️
-     <strong data-kk="Кондиционер"
-      data-ru="Кондиционер">Кондиционер</strong>
-    </div>
-   </div>
-  </section>
-
-  <section class="panel">
-   <h2 data-kk="Брондау күнтізбесі"
-       data-ru="Календарь бронирования">
-    Брондау күнтізбесі
-   </h2>
-
-   <p class="muted" style="font-size:12px"
-    data-kk="Қызыл күндер — демо ретінде бос емес. Басқа күнді таңдауға болады."
-    data-ru="Красные даты заняты в демо-режиме. Вы можете выбрать другую дату.">
-    Қызыл күндер — демо ретінде бос емес.
-   </p>
-
-   <div class="calendar-header">
-    <button id="prevMonth" type="button">❮</button>
-    <strong id="monthTitle"></strong>
-    <button id="nextMonth" type="button">❯</button>
-   </div>
-
-   <div class="calendar-grid" id="calendar"></div>
-
-   <div class="legend">
-    <span><i class="dot"></i>
-     <span data-kk="Бос" data-ru="Свободно">Бос</span>
-    </span>
-    <span><i class="dot red"></i>
-     <span data-kk="Брондалған" data-ru="Занято">Брондалған</span>
-    </span>
-    <span><i class="dot green"></i>
-     <span data-kk="Таңдалған" data-ru="Выбрано">Таңдалған</span>
-    </span>
-   </div>
-  </section>
-
+ <div class="breadcrumb">
+  <a href="index.html"
+   data-kk="Басты бет"
+   data-ru="Главная">Басты бет</a>
+  /
+  <a href="venues.html"
+   data-kk="Тойханалар"
+   data-ru="Банкетные залы">Тойханалар</a>
+  / <span id="crumbName"></span>
  </div>
 
- <aside class="panel booking-panel">
-  <div class="eyebrow"
-   data-kk="БІР АДАМҒА"
-   data-ru="ЗА ЧЕЛОВЕКА">БІР АДАМҒА</div>
+ <div class="eyebrow">✦ SHANYRAQ PREMIUM</div>
+ <h1 id="venueName"></h1>
+ <p class="subtitle" id="venueLocation"></p>
 
-  <div class="price">
-   12 000 ₸
-   <small data-kk="/ адамға"
-    data-ru="/ за человека">/ адамға</small>
+ <div class="gallery">
+  <img id="photo1" alt="Hall" loading="lazy">
+  <img id="photo2" alt="Interior" loading="lazy">
+  <img id="photo3" alt="Event" loading="lazy">
+ </div>
+
+ <div class="layout">
+  <div>
+   <section class="panel">
+    <h2 data-kk="Тойхана туралы"
+     data-ru="О банкетном зале">
+     Тойхана туралы
+    </h2>
+    <p class="description" id="venueDescription"></p>
+   </section>
+
+   <section class="panel">
+    <h2 data-kk="Мүмкіндіктер"
+     data-ru="Удобства">Мүмкіндіктер</h2>
+    <div class="features">
+     <div class="feature">👥
+      <strong id="capacityText"></strong>
+     </div>
+     <div class="feature">🚗
+      <strong data-kk="Автотұрақ"
+       data-ru="Парковка">Автотұрақ</strong>
+     </div>
+     <div class="feature">🎵
+      <strong data-kk="Музыка алаңы"
+       data-ru="Музыкальная площадка">
+       Музыка алаңы
+      </strong>
+     </div>
+     <div class="feature">❄️
+      <strong data-kk="Кондиционер"
+       data-ru="Кондиционер">Кондиционер</strong>
+     </div>
+    </div>
+   </section>
+
+   <section class="panel">
+    <h2 data-kk="Брондау күнтізбесі"
+     data-ru="Календарь бронирования">
+     Брондау күнтізбесі
+    </h2>
+    <p class="hint"
+     data-kk="Қызыл күндер — демо ретінде бос емес."
+     data-ru="Красные даты заняты в демо-режиме.">
+     Қызыл күндер — демо ретінде бос емес.
+    </p>
+    <div class="calendar-header">
+     <button id="prevMonth" type="button">❮</button>
+     <strong id="monthTitle"></strong>
+     <button id="nextMonth" type="button">❯</button>
+    </div>
+    <div class="calendar-grid" id="calendar"></div>
+    <div class="legend">
+     <span><i class="dot"></i>
+      <span data-kk="Бос"
+       data-ru="Свободно">Бос</span>
+     </span>
+     <span><i class="dot red"></i>
+      <span data-kk="Брондалған"
+       data-ru="Занято">Брондалған</span>
+     </span>
+     <span><i class="dot green"></i>
+      <span data-kk="Таңдалған"
+       data-ru="Выбрано">Таңдалған</span>
+     </span>
+    </div>
+   </section>
   </div>
 
-  <div class="field">
-   <label data-kk="ҚОНАҚ САНЫ"
-    data-ru="КОЛИЧЕСТВО ГОСТЕЙ">ҚОНАҚ САНЫ</label>
-   <input type="number" id="guests"
-    min="1" max="300" value="100">
-  </div>
+  <aside class="panel booking-panel">
+   <div class="eyebrow"
+    data-kk="БІР АДАМҒА"
+    data-ru="ЗА ЧЕЛОВЕКА">БІР АДАМҒА</div>
+   <div class="price">
+    <span id="venuePrice"></span>
+    <small data-kk="/ адамға"
+     data-ru="/ за человека">/ адамға</small>
+   </div>
 
-  <div class="field">
-   <label data-kk="ТАҢДАЛҒАН КҮН"
-    data-ru="ВЫБРАННАЯ ДАТА">ТАҢДАЛҒАН КҮН</label>
-   <input type="date" id="selectedDate">
-  </div>
+   <div class="field">
+    <label data-kk="ҚОНАҚ САНЫ"
+     data-ru="КОЛИЧЕСТВО ГОСТЕЙ">
+     ҚОНАҚ САНЫ
+    </label>
+    <input type="number" id="guests" min="1">
+   </div>
 
-  <div class="total">
-   <span data-kk="Жалпы баға"
-    data-ru="Общая стоимость">Жалпы баға</span>
-   <strong id="totalPrice">1 200 000 ₸</strong>
-  </div>
+   <div class="field">
+    <label data-kk="ТАҢДАЛҒАН КҮН"
+     data-ru="ВЫБРАННАЯ ДАТА">
+     ТАҢДАЛҒАН КҮН
+    </label>
+    <input type="date" id="selectedDate">
+   </div>
 
-  <button class="gold-btn" id="bookBtn"
-   data-kk="📅 Брондау өтінімі"
-   data-ru="📅 Заявка на бронирование">
-   📅 Брондау өтінімі
-  </button>
+   <div class="total">
+    <span data-kk="Жалпы баға"
+     data-ru="Общая стоимость">Жалпы баға</span>
+    <strong id="totalPrice"></strong>
+   </div>
 
-  <p class="hint"
-   data-kk="Бұл демонстрациялық есеп. Нақты баға мен бос күндер серіктес тіркелгеннен кейін көрсетіледі."
-   data-ru="Это демонстрационный расчёт. Реальные цены и свободные даты появятся после подключения партнёров.">
-   Бұл демонстрациялық есеп.
-  </p>
- </aside>
-</div>
+   <button id="bookBtn" class="gold-btn"
+    data-kk="📅 Брондау өтінімі"
+    data-ru="📅 Заявка на бронирование">
+    📅 Брондау өтінімі
+   </button>
+   <p class="hint"
+    data-kk="Бұл демонстрациялық есеп. Нақты брондау жасалмайды."
+    data-ru="Это демонстрационный расчёт. Реальное бронирование недоступно.">
+    Бұл демонстрациялық есеп.
+   </p>
+  </aside>
+ </div>
 </main>
 
 <dialog id="bookingDialog">
@@ -392,282 +400,431 @@ footer{
    data-ru="Заявка на бронирование">
    Брондау өтінімі
   </h2>
-
-  <p class="hint" id="bookingSummary"></p>
+  <p id="bookingSummary" class="hint"></p>
 
   <label data-kk="Аты-жөніңіз"
    data-ru="Ваше имя">Аты-жөніңіз</label>
   <input id="customerName" required maxlength="80">
 
-  <label data-kk="Телефон нөмірі"
-   data-ru="Номер телефона">Телефон нөмірі</label>
+  <label data-kk="Телефон"
+   data-ru="Телефон">Телефон</label>
   <input id="customerPhone" type="tel" required
    pattern="[+0-9 ()-]{9,20}">
 
   <div class="dialog-actions">
-   <button type="button" class="close-btn"
-    id="closeDialog"
+   <button type="button" id="closeDialog"
+    class="close-btn"
     data-kk="Жабу" data-ru="Закрыть">Жабу</button>
    <button type="submit" class="gold-btn"
-    data-kk="Өтінімді сақтау"
-    data-ru="Сохранить заявку">
-    Өтінімді сақтау
+    data-kk="Демо өтінімді сақтау"
+    data-ru="Сохранить демо-заявку">
+    Демо өтінімді сақтау
    </button>
   </div>
-  <p class="hint"
-   data-kk="Демо: өтінім тек осы браузерде сақталады."
-   data-ru="Демо: заявка сохраняется только в этом браузере.">
-   Демо: өтінім тек осы браузерде сақталады.
-  </p>
  </form>
 </dialog>
 
 <dialog id="lightbox">
- <button type="button" id="closeLightbox">✕</button>
+ <button id="closeLightbox" type="button">✕</button>
  <img id="largePhoto" alt="Gallery">
 </dialog>
 
 <footer>© 2026 Shanyraq Booking · DEMO</footer>
 
 <script>
-const $=id=>document.getElementById(id);
-const format=n=>new Intl.NumberFormat("kk-KZ").format(n);
-const price=12000;
-const maxGuests=300;
-const now=new Date();
-const today=new Date(
- now.getTime()-now.getTimezoneOffset()*60000
-).toISOString().slice(0,10);
+const venues = [
+ {
+  id:1,
+  name:"Royal Garden",
+  city:"Тараз",
+  price:12000,
+  capacity:300,
+  images:[
+   "photo-1519167758481-83f550bb49b3",
+   "photo-1511795409834-ef04bbd61622",
+   "photo-1519741497674-611481863552"
+  ]
+ },
+ {
+  id:2,
+  name:"Golden Palace",
+  city:"Алматы",
+  price:18000,
+  capacity:450,
+  images:[
+   "photo-1519741497674-611481863552",
+   "photo-1464366400600-7168b8af9bc3",
+   "photo-1519225421980-715cb0215aed"
+  ]
+ },
+ {
+  id:3,
+  name:"Samal Hall",
+  city:"Шымкент",
+  price:9000,
+  capacity:220,
+  images:[
+   "photo-1511795409834-ef04bbd61622",
+   "photo-1519167758481-83f550bb49b3",
+   "photo-1507504031003-b417219a0fde"
+  ]
+ },
+ {
+  id:4,
+  name:"Emerald Event",
+  city:"Астана",
+  price:16000,
+  capacity:350,
+  images:[
+   "photo-1464366400600-7168b8af9bc3",
+   "photo-1519225421980-715cb0215aed",
+   "photo-1519741497674-611481863552"
+  ]
+ },
+ {
+  id:5,
+  name:"Altyn Saray",
+  city:"Тараз",
+  price:10500,
+  capacity:180,
+  images:[
+   "photo-1507504031003-b417219a0fde",
+   "photo-1511795409834-ef04bbd61622",
+   "photo-1519167758481-83f550bb49b3"
+  ]
+ },
+ {
+  id:6,
+  name:"Grand Celebration",
+  city:"Алматы",
+  price:20000,
+  capacity:500,
+  images:[
+   "photo-1519225421980-715cb0215aed",
+   "photo-1464366400600-7168b8af9bc3",
+   "photo-1519741497674-611481863552"
+  ]
+ }
+];
 
-let lang="kk";
-let viewYear=now.getFullYear();
-let viewMonth=now.getMonth();
-let selected="";
+const $ = id => document.getElementById(id);
+const fmt = n =>
+ new Intl.NumberFormat("kk-KZ").format(n);
 
-const months={
- kk:["Қаңтар","Ақпан","Наурыз","Сәуір",
- "Мамыр","Маусым","Шілде","Тамыз",
- "Қыркүйек","Қазан","Қараша","Желтоқсан"],
- ru:["Январь","Февраль","Март","Апрель",
- "Май","Июнь","Июль","Август",
- "Сентябрь","Октябрь","Ноябрь","Декабрь"]
-};
+const params = new URLSearchParams(location.search);
+const venueId = Number(params.get("id") || 1);
+const venue = venues.find(v => v.id === venueId);
 
-const weekdays={
- kk:["Дс","Сс","Ср","Бс","Жм","Сб","Жс"],
- ru:["Пн","Вт","Ср","Чт","Пт","Сб","Вс"]
-};
-
-function iso(y,m,d){
- return y+"-"+String(m+1).padStart(2,"0")+
- "-"+String(d).padStart(2,"0");
+if (!venue) {
+ location.replace("venues.html");
+} else {
+ init();
 }
 
-// Тек демонстрациялық бос емес күндер.
-function isBooked(y,m,d){
- return [5,12,19,26].includes(d);
-}
+function init() {
+ const now = new Date();
+ const today = new Date(
+  now.getTime() - now.getTimezoneOffset()*60000
+ ).toISOString().slice(0,10);
 
-function setLanguage(value){
- lang=value==="ru"?"ru":"kk";
- localStorage.setItem("shanyraq_lang",lang);
- document.documentElement.lang=lang;
+ let lang = "kk";
+ let viewYear = now.getFullYear();
+ let viewMonth = now.getMonth();
+ let selected = "";
 
- document.querySelectorAll("[data-kk][data-ru]")
- .forEach(el=>{
-  el.textContent=el.getAttribute("data-"+lang);
- });
+ const months = {
+  kk:["Қаңтар","Ақпан","Наурыз","Сәуір",
+      "Мамыр","Маусым","Шілде","Тамыз",
+      "Қыркүйек","Қазан","Қараша","Желтоқсан"],
+  ru:["Январь","Февраль","Март","Апрель",
+      "Май","Июнь","Июль","Август",
+      "Сентябрь","Октябрь","Ноябрь","Декабрь"]
+ };
 
- $("kz").classList.toggle("active",lang==="kk");
- $("ru").classList.toggle("active",lang==="ru");
+ const weekdays = {
+  kk:["Дс","Сс","Ср","Бс","Жм","Сб","Жс"],
+  ru:["Пн","Вт","Ср","Чт","Пт","Сб","Вс"]
+ };
 
- renderCalendar();
- updateTotal();
-}
-
-$("kz").onclick=()=>setLanguage("kk");
-$("ru").onclick=()=>setLanguage("ru");
-
-function updateTotal(){
- let guests=Number($("guests").value)||0;
- $("totalPrice").textContent=
- format(guests*price)+" ₸";
-}
-
-$("guests").addEventListener("input",updateTotal);
-
-function renderCalendar(){
- $("monthTitle").textContent=
- months[lang][viewMonth]+" "+viewYear;
-
- const grid=$("calendar");
- grid.innerHTML="";
-
- weekdays[lang].forEach(w=>{
-  const cell=document.createElement("div");
-  cell.className="weekday";
-  cell.textContent=w;
-  grid.appendChild(cell);
- });
-
- const offset=(new Date(viewYear,viewMonth,1).getDay()+6)%7;
- const count=new Date(viewYear,viewMonth+1,0).getDate();
-
- for(let i=0;i<offset;i++){
-  grid.appendChild(document.createElement("div"));
+ function imageUrl(id) {
+  return "https://images.unsplash.com/" + id +
+   "?auto=format&fit=crop&w=1200&q=85";
  }
 
- for(let d=1;d<=count;d++){
-  const date=iso(viewYear,viewMonth,d);
-  const booked=isBooked(viewYear,viewMonth,d);
-  const past=date<today;
+ $("venueName").textContent = venue.name;
+ $("crumbName").textContent = venue.name;
+ $("venuePrice").textContent = fmt(venue.price) + " ₸";
 
-  const btn=document.createElement("button");
-  btn.type="button";
-  btn.className="day";
-  btn.textContent=d;
+ venue.images.forEach((img,i) => {
+  $("photo" + (i+1)).src = imageUrl(img);
+ });
 
-  if(booked)btn.classList.add("booked");
-  if(date===selected)btn.classList.add("selected");
-  btn.disabled=booked||past;
+ $("guests").max = venue.capacity;
+ $("guests").value = Math.min(100,venue.capacity);
+ $("selectedDate").min = today;
 
-  btn.onclick=()=>{
-   selected=date;
-   $("selectedDate").value=date;
+ function iso(y,m,d) {
+  return y + "-" +
+   String(m+1).padStart(2,"0") + "-" +
+   String(d).padStart(2,"0");
+ }
+
+ // Әр тойханаға бөлек демо бос емес күндер
+ function isBooked(y,m,d) {
+  const patterns = {
+   1:[5,12,19,26],
+   2:[3,10,17,24],
+   3:[6,13,20,27],
+   4:[4,11,18,25],
+   5:[2,9,16,23],
+   6:[7,14,21,28]
+  };
+  return patterns[venue.id].includes(d);
+ }
+
+ function updateTotal() {
+  const guests = Number($("guests").value) || 0;
+  $("totalPrice").textContent =
+   fmt(guests * venue.price) + " ₸";
+ }
+
+ function updateDetails() {
+  $("venueLocation").textContent =
+   "📍 " + venue.city +
+   (lang === "kk"
+    ? ", Қазақстан · Демо тойхана"
+    : ", Казахстан · Демо-зал");
+
+  $("capacityText").textContent =
+   lang === "kk"
+    ? venue.capacity + " қонаққа дейін"
+    : "До " + venue.capacity + " гостей";
+
+  $("venueDescription").textContent =
+   lang === "kk"
+    ? venue.name + " — Shanyraq Booking платформасындағы демонстрациялық тойхана. Фотосуреттер, бағалар және күнтізбе үлгі ретінде көрсетілген."
+    : venue.name + " — демонстрационный банкетный зал платформы Shanyraq Booking. Фотографии, цены и календарь приведены в качестве примера.";
+ }
+
+ function renderCalendar() {
+  $("monthTitle").textContent =
+   months[lang][viewMonth] + " " + viewYear;
+
+  const grid = $("calendar");
+  grid.innerHTML = "";
+
+  weekdays[lang].forEach(w => {
+   const cell = document.createElement("div");
+   cell.className = "weekday";
+   cell.textContent = w;
+   grid.appendChild(cell);
+  });
+
+  const offset =
+   (new Date(viewYear,viewMonth,1).getDay()+6)%7;
+
+  const count =
+   new Date(viewYear,viewMonth+1,0).getDate();
+
+  for(let i=0;i<offset;i++) {
+   grid.appendChild(document.createElement("div"));
+  }
+
+  for(let d=1;d<=count;d++) {
+   const date = iso(viewYear,viewMonth,d);
+   const booked = isBooked(viewYear,viewMonth,d);
+
+   const btn = document.createElement("button");
+   btn.type = "button";
+   btn.className = "day";
+   btn.textContent = d;
+
+   if(booked) btn.classList.add("booked");
+   if(date === selected) btn.classList.add("selected");
+
+   btn.disabled = booked || date < today;
+
+   btn.onclick = () => {
+    selected = date;
+    $("selectedDate").value = date;
+    renderCalendar();
+   };
+
+   grid.appendChild(btn);
+  }
+ }
+
+ function setLanguage(value) {
+  lang = value === "ru" ? "ru" : "kk";
+
+  localStorage.setItem("shanyraq_lang",lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-kk][data-ru]")
+   .forEach(el => {
+    el.textContent =
+     el.getAttribute("data-" + lang);
+   });
+
+  $("kz").classList.toggle("active",lang==="kk");
+  $("ru").classList.toggle("active",lang==="ru");
+
+  updateDetails();
+  renderCalendar();
+  updateTotal();
+ }
+
+ $("kz").onclick = () => setLanguage("kk");
+ $("ru").onclick = () => setLanguage("ru");
+
+ $("guests").addEventListener("input",updateTotal);
+
+ $("prevMonth").onclick = () => {
+  const previous =
+   new Date(viewYear,viewMonth-1,1);
+
+  const firstCurrent =
+   new Date(now.getFullYear(),now.getMonth(),1);
+
+  if(previous < firstCurrent) return;
+
+  viewYear = previous.getFullYear();
+  viewMonth = previous.getMonth();
+  renderCalendar();
+ };
+
+ $("nextMonth").onclick = () => {
+  const next = new Date(viewYear,viewMonth+1,1);
+  viewYear = next.getFullYear();
+  viewMonth = next.getMonth();
+  renderCalendar();
+ };
+
+ $("selectedDate").onchange = () => {
+  const value = $("selectedDate").value;
+  if(!value) {
+   selected = "";
    renderCalendar();
+   return;
+  }
+
+  const [y,m,d] = value.split("-").map(Number);
+
+  if(value < today || isBooked(y,m-1,d)) {
+   alert(lang==="kk"
+    ? "Бұл күн қолжетімсіз."
+    : "Эта дата недоступна.");
+   $("selectedDate").value = selected;
+   return;
+  }
+
+  selected = value;
+  viewYear = y;
+  viewMonth = m-1;
+  renderCalendar();
+ };
+
+ $("bookBtn").onclick = () => {
+  const guests = Number($("guests").value);
+
+  if(!Number.isInteger(guests) ||
+     guests < 1 || guests > venue.capacity) {
+   alert(lang==="kk"
+    ? "Қонақ санын дұрыс енгізіңіз."
+    : "Введите корректное количество гостей.");
+   return;
+  }
+
+  if(!selected) {
+   alert(lang==="kk"
+    ? "Алдымен күнді таңдаңыз!"
+    : "Сначала выберите дату!");
+   return;
+  }
+
+  $("bookingSummary").textContent =
+   venue.name + " · " + selected + " · " +
+   guests + " · " +
+   fmt(guests*venue.price) + " ₸";
+
+  $("bookingDialog").showModal();
+ };
+
+ $("closeDialog").onclick = () => {
+  $("bookingDialog").close();
+ };
+
+ $("bookingForm").onsubmit = e => {
+  e.preventDefault();
+
+  const booking = {
+   venueId:venue.id,
+   venue:venue.name,
+   date:selected,
+   guests:Number($("guests").value),
+   total:Number($("guests").value)*venue.price,
+   name:$("customerName").value,
+   phone:$("customerPhone").value,
+   createdAt:new Date().toISOString()
   };
 
-  grid.appendChild(btn);
- }
-}
+  const bookings = JSON.parse(
+   localStorage.getItem("shanyraq_demo_bookings")
+   || "[]"
+  );
 
-$("prevMonth").onclick=()=>{
- const firstCurrent=new Date(now.getFullYear(),now.getMonth(),1);
- const previous=new Date(viewYear,viewMonth-1,1);
- if(previous<firstCurrent)return;
- viewYear=previous.getFullYear();
- viewMonth=previous.getMonth();
- renderCalendar();
-};
+  bookings.push(booking);
 
-$("nextMonth").onclick=()=>{
- const next=new Date(viewYear,viewMonth+1,1);
- viewYear=next.getFullYear();
- viewMonth=next.getMonth();
- renderCalendar();
-};
+  localStorage.setItem(
+   "shanyraq_demo_bookings",
+   JSON.stringify(bookings)
+  );
 
-$("selectedDate").min=today;
+  $("bookingDialog").close();
+  $("bookingForm").reset();
 
-$("selectedDate").onchange=()=>{
- const value=$("selectedDate").value;
- if(!value)return;
-
- const [y,m,d]=value.split("-").map(Number);
-
- if(value<today||isBooked(y,m-1,d)){
-  alert(lang==="kk"?
-   "Бұл күн қолжетімсіз (демо).":
-   "Эта дата недоступна (демо).");
-  $("selectedDate").value=selected;
-  return;
- }
-
- selected=value;
- viewYear=y;
- viewMonth=m-1;
- renderCalendar();
-};
-
-$("bookBtn").onclick=()=>{
- const guests=Number($("guests").value);
-
- if(!Number.isInteger(guests)||
-    guests<1||guests>maxGuests){
-  alert(lang==="kk"?
-   "Қонақ саны 1–300 аралығында болуы керек.":
-   "Количество гостей должно быть от 1 до 300.");
-  return;
- }
-
- if(!selected){
-  alert(lang==="kk"?
-   "Алдымен күнді таңдаңыз!":
-   "Сначала выберите дату!");
-  return;
- }
-
- $("bookingSummary").textContent=
- "Royal Garden · "+selected+" · "+
- guests+" · "+format(guests*price)+" ₸";
-
- $("bookingDialog").showModal();
-};
-
-$("closeDialog").onclick=()=>
- $("bookingDialog").close();
-
-$("bookingForm").onsubmit=e=>{
- e.preventDefault();
-
- const booking={
-  venue:"Royal Garden",
-  date:selected,
-  guests:Number($("guests").value),
-  total:Number($("guests").value)*price,
-  name:$("customerName").value,
-  phone:$("customerPhone").value,
-  createdAt:new Date().toISOString()
+  alert(lang==="kk"
+   ? "Демо өтінім сақталды. Нақты брондау жасалған жоқ."
+   : "Демо-заявка сохранена. Реальное бронирование не выполнено.");
  };
 
- const bookings=JSON.parse(
-  localStorage.getItem("shanyraq_demo_bookings")||"[]"
- );
- bookings.push(booking);
+ document.querySelectorAll(".gallery img")
+  .forEach(img => {
+   img.onclick = () => {
+    $("largePhoto").src = img.src;
+    $("lightbox").showModal();
+   };
+  });
 
- localStorage.setItem(
-  "shanyraq_demo_bookings",
-  JSON.stringify(bookings)
- );
-
- $("bookingDialog").close();
- $("bookingForm").reset();
-
- alert(lang==="kk"?
-  "Демо өтінім сақталды. Нақты брондау жасалған жоқ.":
-  "Демо-заявка сохранена. Реальное бронирование не выполнено.");
-};
-
-// Фотогалерея
-document.querySelectorAll(".gallery img").forEach(img=>{
- img.onclick=()=>{
-  $("largePhoto").src=img.src;
-  $("lightbox").showModal();
+ $("closeLightbox").onclick = () => {
+  $("lightbox").close();
  };
-});
 
-$("closeLightbox").onclick=()=>
- $("lightbox").close();
+ const requestedDate = params.get("date");
 
-// Каталогтан келген тойхана ID
-const params=new URLSearchParams(location.search);
-const requestedDate=params.get("date");
+ if(requestedDate &&
+    /^\d{4}-\d{2}-\d{2}$/.test(requestedDate)) {
+  const [y,m,d] = requestedDate.split("-").map(Number);
 
-if(requestedDate&&/^\d{4}-\d{2}-\d{2}$/.test(requestedDate)){
- const [y,m,d]=requestedDate.split("-").map(Number);
- if(requestedDate>=today&&!isBooked(y,m-1,d)){
-  selected=requestedDate;
-  viewYear=y;
-  viewMonth=m-1;
-  $("selectedDate").value=requestedDate;
+  if(requestedDate >= today &&
+     !isBooked(y,m-1,d)) {
+   selected = requestedDate;
+   viewYear = y;
+   viewMonth = m-1;
+   $("selectedDate").value = requestedDate;
+  }
  }
-}
 
-setLanguage(
- params.get("lang")||
- localStorage.getItem("shanyraq_lang")||
- "kk"
-);
+ const requestedLang = params.get("lang");
+ const savedLang =
+  localStorage.getItem("shanyraq_lang");
+
+ setLanguage(
+  ["kk","ru"].includes(requestedLang)
+   ? requestedLang
+   : savedLang
+ );
+}
 </script>
 </body>
 </html>
