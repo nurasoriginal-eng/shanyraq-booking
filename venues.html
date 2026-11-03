@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тойханалар | Shanyraq Booking</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#f7f5ef;
+ color:#19352e;
+ font-family:Arial,sans-serif;
+}
+button,input,select{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.container{max-width:1150px;margin:auto;padding:0 20px}
+
+header{
+ background:#102d29;
+ color:white;
+ padding:22px 0;
+}
+.nav{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:15px;
+}
+.logo{
+ font-family:Georgia,serif;
+ font-size:25px;
+ font-weight:bold;
+}
+.logo span{color:#d8b876}
+.back{
+ border:1px solid #ffffff60;
+ border-radius:10px;
+ padding:11px;
+ font-size:13px;
+}
+
+.hero{
+ background:linear-gradient(120deg,#102d29,#27604f);
+ color:white;
+ padding:65px 0 80px;
+}
+.hero h1{
+ font-family:Georgia,serif;
+ font-size:clamp(35px,5vw,58px);
+ margin:15px 0;
+}
+.hero p{color:#d4e0d9;line-height:1.8}
+.gold{color:#d8b876;font-weight:bold}
+
+.filters{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:12px;
+ background:white;
+ padding:20px;
+ border-radius:18px;
+ margin-top:-35px;
+ position:relative;
+ box-shadow:0 15px 40px #132e2515;
+}
+.field label{
+ display:block;
+ font-size:11px;
+ color:#718079;
+ font-weight:bold;
+ margin-bottom:8px;
+}
+.field input,.field select{
+ width:100%;
+ padding:13px;
+ border:1px solid #dce5de;
+ border-radius:10px;
+ background:white;
+}
+.heading{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:15px;
+ margin:40px 0 22px;
+ flex-wrap:wrap;
+}
+.heading h2{
+ font:700 30px Georgia,serif;
+ margin:0;
+}
+.muted{color:#718079;font-size:13px}
+.fav-filter{
+ padding:12px;
+ border:1px solid #cad8ce;
+ background:white;
+ border-radius:10px;
+}
+.fav-filter.active{background:#e8f2eb}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:23px;
+ padding-bottom:60px;
+}
+.card{
+ background:white;
+ border-radius:20px;
+ overflow:hidden;
+ box-shadow:0 8px 30px #102d2910;
+ transition:.3s;
+}
+.card:hover{transform:translateY(-5px)}
+.photo{
+ height:215px;
+ background-size:cover;
+ background-position:center;
+ position:relative;
+}
+.tag{
+ position:absolute;
+ top:15px;
+ left:15px;
+ background:white;
+ border-radius:25px;
+ padding:8px 12px;
+ font-size:11px;
+ font-weight:bold;
+}
+.heart{
+ position:absolute;
+ right:15px;
+ top:13px;
+ border:0;
+ background:white;
+ border-radius:50%;
+ width:40px;
+ height:40px;
+ font-size:23px;
+ color:#888;
+}
+.heart.saved{color:#e44869}
+.card-body{padding:22px}
+.card-body h3{font-size:21px;margin:0 0 10px}
+.details{color:#718079;font-size:13px;line-height:1.8}
+.price{
+ color:#194e3e;
+ font-size:21px;
+ font-weight:bold;
+ margin:17px 0;
+}
+.price small{
+ color:#718079;
+ font-size:11px;
+ font-weight:normal;
+}
+.actions{display:flex;gap:10px}
+.btn{
+ border:0;
+ border-radius:10px;
+ padding:13px;
+ font-weight:bold;
+ font-size:12px;
+}
+.primary{background:#102d29;color:white;flex:1}
+.secondary{background:#f0eee6;color:#102d29}
+
+.notice{
+ background:#fff7dd;
+ padding:15px;
+ border-radius:12px;
+ font-size:12px;
+ margin-bottom:25px;
+ line-height:1.7;
+}
+.empty{text-align:center;padding:45px;color:#718079}
+
+dialog{
+ border:0;
+ border-radius:20px;
+ padding:25px;
+ width:calc(100% - 30px);
+ max-width:450px;
+ box-shadow:0 30px 100px #0005;
+}
+dialog::backdrop{background:#051a17aa}
+dialog h2{font-family:Georgia,serif}
+dialog label{
+ display:block;
+ margin:15px 0 7px;
+ font-size:12px;
+ font-weight:bold;
+}
+dialog input{
+ width:100%;
+ padding:13px;
+ border:1px solid #cddbd1;
+ border-radius:10px;
+}
+footer{
+ background:#0b211d;
+ color:#d4dfd9;
+ text-align:center;
+ padding:25px;
+ font-size:12px;
+}
+@media(max-width:850px){
+ .filters{grid-template-columns:repeat(2,1fr)}
+ .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:570px){
+ .filters,.grid{grid-template-columns:1fr}
+ .logo{font-size:20px}
+ .photo{height:230px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container nav">
+  <a href="index.html" class="logo">
+   ✦ SHANYRAQ<span>.</span>
+  </a>
+  <a href="index.html" class="back">← Басты бет</a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="container">
+  <div class="gold">✦ SHANYRAQ BOOKING</div>
+  <h1>Армандаған тойханаңызды табыңыз</h1>
+  <p>Қазақстандағы тойханаларды іздеңіз, бағаларын
+  салыстырыңыз және өзіңізге ыңғайлы күнді таңдаңыз.</p>
+ </div>
+</section>
+
+<main class="container">
+
+<div class="filters">
+ <div class="field">
+  <label>ҚАЛА</label>
+  <select id="city">
+   <option value="">Барлық қалалар</option>
+   <option>Тараз</option>
+   <option>Алматы</option>
+   <option>Астана</option>
+   <option>Шымкент</option>
+  </select>
+ </div>
+
+ <div class="field">
+  <label>БІР АДАМҒА БАҒА</label>
+  <select id="price">
+   <option value="">Кез келген</option>
+   <option value="10000">10 000 ₸ дейін</option>
+   <option value="15000">15 000 ₸ дейін</option>
+   <option value="20000">20 000 ₸ дейін</option>
+  </select>
+ </div>
+
+ <div class="field">
+  <label>ҚОНАҚ САНЫ</label>
+  <input type="number" id="guests"
+   min="1" placeholder="Мысалы: 150">
+ </div>
+
+ <div class="field">
+  <label>ТОЙ КҮНІ</label>
+  <input type="date" id="date">
+ </div>
+</div>
+
+<div class="heading">
+ <div>
+  <h2>Тойханалар каталогы</h2>
+  <p class="muted" id="count"></p>
+ </div>
+ <button id="favFilter" class="fav-filter">
+  ♡ Таңдаулылар
+ </button>
+</div>
+
+<div class="notice">
+ ⚠️ Қазіргі тойханалар мен бағалар — демонстрациялық
+ мысалдар. Нақты брондау жүйесі деректер базасы
+ қосылғаннан кейін жұмыс істейді.
+</div>
+
+<div class="grid" id="cards"></div>
+<div class="empty" id="empty" hidden>
+ Сүзгіге сәйкес тойхана табылмады.
+</div>
+
+</main>
+
+<dialog id="bookingDialog">
+ <form id="bookingForm">
+  <h2 id="bookingTitle">Брондау</h2>
+  <p class="muted">Демонстрациялық өтінім</p>
+
+  <label>Аты-жөніңіз</label>
+  <input id="customerName" required
+   maxlength="80" placeholder="Атыңыз">
+
+  <label>Телефон</label>
+  <input id="customerPhone" type="tel" required
+   placeholder="+7 777 123 45 67">
+
+  <label>Той күні</label>
+  <input id="bookingDate" type="date" required>
+
+  <div class="actions" style="margin-top:20px">
+   <button type="button" id="closeDialog"
+    class="btn secondary">Жабу</button>
+   <button type="submit" class="btn primary">
+    Демо өтінім
+   </button>
+  </div>
+ </form>
+</dialog>
+
+<footer>
+ © 2026 Shanyraq Booking · Premium Platform
+</footer>
+
+<script>
+const venues = [
+ {
+  id:1,
+  name:"Royal Garden",
+  city:"Тараз",
+  price:12000,
+  capacity:300,
+  image:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:2,
+  name:"Golden Palace",
+  city:"Алматы",
+  price:18000,
+  capacity:450,
+  image:"https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:3,
+  name:"Samal Hall",
+  city:"Шымкент",
+  price:9000,
+  capacity:220,
+  image:"https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:4,
+  name:"Emerald Event",
+  city:"Астана",
+  price:16000,
+  capacity:350,
+  image:"https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:5,
+  name:"Altyn Saray",
+  city:"Тараз",
+  price:10500,
+  capacity:180,
+  image:"https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:6,
+  name:"Grand Celebration",
+  city:"Алматы",
+  price:20000,
+  capacity:500,
+  image:"https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80"
+ }
+];
+
+const $ = id => document.getElementById(id);
+const format = n =>
+ new Intl.NumberFormat("kk-KZ").format(n);
+
+let saved = new Set(
+ JSON.parse(localStorage.getItem("shanyraq_favs") || "[]")
+);
+
+let onlySaved = false;
+let selectedVenue = null;
+
+const today = new Date();
+const localToday = new Date(
+ today.getTime() - today.getTimezoneOffset()*60000
+).toISOString().slice(0,10);
+
+$("date").min = localToday;
+$("bookingDate").min = localToday;
+
+function render(){
+ const city = $("city").value;
+ const maxPrice = Number($("price").value) || Infinity;
+ const guests = Number($("guests").value) || 0;
+
+ const filtered = venues.filter(v =>
+  (!city || v.city === city) &&
+  v.price <= maxPrice &&
+  v.capacity >= guests &&
+  (!onlySaved || saved.has(v.id))
+ );
+
+ $("count").textContent =
+  filtered.length + " ұсыныс табылды";
+
+ $("cards").innerHTML = filtered.map(v => `
+  <article class="card">
+   <div class="photo"
+    style="background-image:url('${v.image}')">
+    <span class="tag">✦ Демо</span>
+    <button class="heart ${saved.has(v.id) ? "saved" : ""}"
+     data-fav="${v.id}">
+     ${saved.has(v.id) ? "♥" : "♡"}
+    </button>
+   </div>
+
+   <div class="card-body">
+    <h3>${v.name}</h3>
+    <div class="details">
+     📍 ${v.city}<br>
+     👥 ${v.capacity} адамға дейін
+    </div>
+
+    <div class="price">
+     ${format(v.price)} ₸
+     <small>/ адамға</small>
+    </div>
+
+    <div class="actions">
+     <button class="btn primary"
+      data-book="${v.id}">
+      📅 Брондау
+     </button>
+     <button class="btn secondary"
+      data-info="${v.id}">
+      Толығырақ
+     </button>
+    </div>
+   </div>
+  </article>
+ `).join("");
+
+ $("empty").hidden = filtered.length > 0;
+}
+
+["city","price","guests","date"].forEach(id => {
+ $(id).addEventListener("input",render);
+});
+
+$("favFilter").onclick = () => {
+ onlySaved = !onlySaved;
+ $("favFilter").classList.toggle("active",onlySaved);
+ render();
+};
+
+$("cards").addEventListener("click",e => {
+ const fav = e.target.closest("[data-fav]");
+ const book = e.target.closest("[data-book]");
+ const info = e.target.closest("[data-info]");
+
+ if(fav){
+  const id = Number(fav.dataset.fav);
+  if(saved.has(id)) saved.delete(id);
+  else saved.add(id);
+
+  localStorage.setItem(
+   "shanyraq_favs",
+   JSON.stringify([...saved])
+  );
+  render();
+ }
+
+ if(info){
+  const v = venues.find(
+   x => x.id === Number(info.dataset.info)
+  );
+  alert(
+   v.name + "\n" +
+   "Қала: " + v.city + "\n" +
+   "Сыйымдылығы: " + v.capacity + "\n" +
+   "Бағасы: " + format(v.price) + " ₸"
+  );
+ }
+
+ if(book){
+  selectedVenue = venues.find(
+   x => x.id === Number(book.dataset.book)
+  );
+  $("bookingTitle").textContent = selectedVenue.name;
+  $("bookingDate").value =
+   $("date").value || localToday;
+  $("bookingDialog").showModal();
+ }
+});
+
+$("closeDialog").onclick = () => {
+ $("bookingDialog").close();
+};
+
+$("bookingForm").onsubmit = e => {
+ e.preventDefault();
+
+ const booking = {
+  venue:selectedVenue.name,
+  name:$("customerName").value,
+  phone:$("customerPhone").value,
+  date:$("bookingDate").value
+ };
+
+ const bookings = JSON.parse(
+  localStorage.getItem("shanyraq_demo_bookings") || "[]"
+ );
+
+ bookings.push(booking);
+
+ localStorage.setItem(
+  "shanyraq_demo_bookings",
+  JSON.stringify(bookings)
+ );
+
+ $("bookingDialog").close();
+ $("bookingForm").reset();
+
+ alert(
+  "Демо өтінім сақталды! " +
+  "Нақты тойханаға жіберілген жоқ."
+ );
+};
+
+render();
+</script>
+
+</body>
+</html>
