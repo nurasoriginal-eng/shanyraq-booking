@@ -1,19 +1,381 @@
+
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Shanyraq Booking — тойханалар мен мерекелік қызметтер платформасының демо нұсқасы">
-<title>Shanyraq Booking — Ерекше сәттер осында</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Shanyraq Booking — Premium Events</title>
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home">✦ SHANYRAQ<span>.</span></a><nav><a href="#categories">Қызметтер</a><a href="#listings">Ұсыныстар</a><a href="#how">Қалай жұмыс істейді?</a></nav><button class="btn btn-gold" id="partnerTop">+ Қызмет қосу</button></div></header>
+
+<header class="header">
+  <div class="container nav">
+
+    <a href="index.html" class="logo">
+      ✦ SHANYRAQ<span>.</span>
+    </a>
+
+    <nav class="navigation">
+      <a href="venues.html" data-i18n="navVenues">
+        Тойханалар
+      </a>
+      <a href="#services" data-i18n="navServices">
+        Қызметтер
+      </a>
+      <a href="#how" data-i18n="navHow">
+        Қалай жұмыс істейді?
+      </a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="language-switch">
+        <button id="langKk" class="lang active"
+                type="button">KZ</button>
+        <button id="langRu" class="lang"
+                type="button">RU</button>
+      </div>
+
+      <a href="#partner" class="partner-btn"
+         data-i18n="addService">
+        + Қызмет қосу
+      </a>
+    </div>
+
+  </div>
+</header>
+
 <main>
-<section class="hero" id="home"><div class="wrap hero-inner"><div class="eyebrow">✦ ҚАЗАҚСТАНДАҒЫ МЕРЕКЕЛІК ПЛАТФОРМА</div><h1>Ерекше сәттер <em>осында</em> басталады.</h1><p>Тойхана, асаба, фотограф және басқа қызметтерді бір жерден іздеуге арналған заманауи платформа.</p><form id="searchForm" class="search"><label>ҚАЛА<select id="city"><option>Тараз</option><option>Алматы</option><option>Астана</option><option>Шымкент</option></select></label><label>ҚЫЗМЕТ<select id="type"><option>Тойхана</option><option>Асаба</option><option>Фотограф</option><option>Безендіру</option></select></label><label>КҮНІ<input id="date" type="date" required></label><button class="btn btn-gold" type="submit">Іздеу →</button></form><div id="searchResult" class="notice" role="status" aria-live="polite" hidden></div><div class="hero-meta"><span>✦ Сәнді интерфейс</span><span>◈ Ыңғайлы іздеу</span><span>◇ Брондау жүйесі жоспарлануда</span></div></div></section>
-<section class="section wrap" id="categories"><div class="eyebrow dark">БАРЛЫҒЫ БІР ЖЕРДЕ</div><h2>Қызметтер әлемі</h2><p class="sub">Мерекеңізге қажет мамандар мен орындар</p><div class="categories"><a class="category cat1" href="#listings"><span>🏛️<strong>Тойханалар</strong><small>Сәнді мерекелік орындар →</small></span></a><a class="category cat2" href="#listings"><span>🎤<strong>Асабалар</strong><small>Мерекелік жүргізушілер →</small></span></a><a class="category cat3" href="#listings"><span>📸<strong>Фотографтар</strong><small>Естелік сәттер →</small></span></a><a class="category cat4" href="#listings"><span>✨<strong>Безендіру</strong><small>Әсем декорациялар →</small></span></a></div></section>
-<section class="section dark-section" id="listings"><div class="wrap"><div class="eyebrow">ТАҢДАУЛЫ ҮЛГІЛЕР</div><h2>Қызметтер каталогы</h2><p class="sub light">Бұл — демо карточкалар. Нақты серіктестер, бағалар мен бос күндер кейін қосылады.</p><div class="cards"><article class="card"><div class="card-photo photo1"><span class="tag">ДЕМО</span></div><div class="card-body"><h3>Royal Garden</h3><p>📍 Тараз · Тойхана үлгісі</p><div class="card-bottom"><b>Бағасы белгіленбеген</b><button class="btn btn-dark demo">Толығырақ →</button></div></div></article><article class="card"><div class="card-photo photo2"><span class="tag">ДЕМО</span></div><div class="card-body"><h3>Event Host</h3><p>🎤 Асаба үлгісі</p><div class="card-bottom"><b>Бағасы белгіленбеген</b><button class="btn btn-dark demo">Толығырақ →</button></div></div></article><article class="card"><div class="card-photo photo3"><span class="tag">ДЕМО</span></div><div class="card-body"><h3>Moment Studio</h3><p>📸 Фотограф үлгісі</p><div class="card-bottom"><b>Бағасы белгіленбеген</b><button class="btn btn-dark demo">Толығырақ →</button></div></div></article></div></div></section>
-<section class="section wrap" id="how"><div class="eyebrow dark">ҮШ ҚАРАПАЙЫМ ҚАДАМ</div><h2>Қалай жұмыс істейді?</h2><div class="steps"><article><span>01</span><h3>Іздеңіз</h3><p>Қалаңызды, қызмет түрін және қажетті күнді таңдаңыз.</p></article><article><span>02</span><h3>Салыстырыңыз</h3><p>Болашақта қызметтердің бағасын, фотоларын және бос күндерін салыстыра аласыз.</p></article><article><span>03</span><h3>Брондаңыз</h3><p>Брондау өтінімі мен иесінің растауын келесі кезеңде іске асырамыз.</p></article></div></section>
-<section class="wrap section"><div class="cta"><div><div class="eyebrow">СЕРІКТЕСТЕРГЕ</div><h2>Өз қызметіңізді танытыңыз</h2><p>Тойхана иелері мен мамандарға арналған профиль және растау жүйесі әзірленеді.</p></div><button class="btn btn-gold" id="partnerBottom">Серіктес болу →</button></div></section>
-</main><footer><div class="wrap foot"><a class="brand" href="#home">✦ SHANYRAQ<span>.</span></a><span>© 2026 Shanyraq Booking · Демо жоба</span></div></footer>
+
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="eyebrow" data-i18n="eyebrow">
+      ✦ Қазақстандағы мерекелік платформа
+    </div>
+
+    <h1 data-i18n="heroTitle">
+      Ерекше сәттер осында басталады.
+    </h1>
+
+    <p data-i18n="heroText">
+      Армандаған тойыңызға арналған
+      үздік орындар мен мамандарды
+      бір жерден табыңыз.
+    </p>
+
+    <form id="searchForm" class="search-box">
+
+      <div class="search-field">
+        <label data-i18n="cityLabel">ҚАЛА</label>
+        <select id="city">
+          <option value="Тараз">Тараз</option>
+          <option value="Алматы">Алматы</option>
+          <option value="Астана">Астана</option>
+          <option value="Шымкент">Шымкент</option>
+        </select>
+      </div>
+
+      <div class="search-field">
+        <label data-i18n="serviceLabel">
+          ҚЫЗМЕТ ТҮРІ
+        </label>
+        <select id="service">
+          <option value="venues" data-i18n="venues">
+            Тойханалар
+          </option>
+          <option value="hosts" data-i18n="hosts">
+            Асабалар
+          </option>
+          <option value="photo" data-i18n="photo">
+            Фотографтар
+          </option>
+          <option value="decor" data-i18n="decor">
+            Безендіру
+          </option>
+        </select>
+      </div>
+
+      <div class="search-field">
+        <label data-i18n="dateLabel">
+          ІС-ШАРА КҮНІ
+        </label>
+        <input id="date" type="date">
+      </div>
+
+      <button class="gold-btn" type="submit"
+              data-i18n="search">
+        Іздеу →
+      </button>
+
+    </form>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>01</strong>
+        <small data-i18n="statOne">
+          Бірыңғай платформа
+        </small>
+      </div>
+
+      <div class="stat">
+        <strong>24/7</strong>
+        <small data-i18n="statTwo">
+          Қызметтерді қарау
+        </small>
+      </div>
+
+      <div class="stat">
+        <strong>100%</strong>
+        <small data-i18n="statThree">
+          Тегін демо
+        </small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+
+    <div class="eyebrow" data-i18n="allInOne">
+      БАРЛЫҒЫ БІР ЖЕРДЕ
+    </div>
+
+    <h2 data-i18n="servicesTitle">
+      Қызметтер әлемі
+    </h2>
+
+    <p class="muted" data-i18n="servicesText">
+      Ерекше күніңізге қажет нәрсенің бәрі.
+    </p>
+
+    <div class="category-grid">
+
+      <a href="venues.html" class="category cat1">
+        <div class="category-content">
+          <h3 data-i18n="venues">🏛️ Тойханалар</h3>
+          <p data-i18n="venuesDesc">
+            Керемет мерекелік орындар →
+          </p>
+        </div>
+      </a>
+
+      <a href="#popular" class="category cat2">
+        <div class="category-content">
+          <h3 data-i18n="hosts">🎤 Асабалар</h3>
+          <p data-i18n="hostsDesc">
+            Кәсіби жүргізушілер →
+          </p>
+        </div>
+      </a>
+
+      <a href="#popular" class="category cat3">
+        <div class="category-content">
+          <h3 data-i18n="photo">📸 Фотографтар</h3>
+          <p data-i18n="photoDesc">
+            Естен кетпес кадрлар →
+          </p>
+        </div>
+      </a>
+
+      <a href="#popular" class="category cat4">
+        <div class="category-content">
+          <h3 data-i18n="decor">✨ Безендіру</h3>
+          <p data-i18n="decorDesc">
+            Сәнді декорациялар →
+          </p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="section dark-section" id="popular">
+  <div class="container">
+
+    <div class="eyebrow" data-i18n="special">
+      АРНАЙЫ ТАҢДАУ
+    </div>
+
+    <h2 data-i18n="popularTitle">
+      Танымал ұсыныстар
+    </h2>
+
+    <p class="muted" data-i18n="demoNote">
+      Бұл ұсыныстар — демонстрациялық үлгілер.
+    </p>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-image image-one">
+          <span class="demo-tag">✦ DEMO</span>
+        </div>
+        <div class="card-body">
+          <h3>Royal Garden</h3>
+          <p>📍 Тараз · Банкет залы</p>
+          <div class="card-bottom">
+            <span class="price" data-i18n="pricePending">
+              Бағасы нақтыланады
+            </span>
+            <a href="venues.html" class="small-btn"
+               data-i18n="view">
+              Қарау →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image image-two">
+          <span class="demo-tag">✦ DEMO</span>
+        </div>
+        <div class="card-body">
+          <h3>Event Host</h3>
+          <p data-i18n="hostProfile">
+            🎤 Асаба · Үлгі профиль
+          </p>
+          <div class="card-bottom">
+            <span class="price" data-i18n="pricePending">
+              Бағасы нақтыланады
+            </span>
+            <button class="small-btn demo-btn"
+                    data-i18n="view">
+              Қарау →
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image image-three">
+          <span class="demo-tag">✦ DEMO</span>
+        </div>
+        <div class="card-body">
+          <h3>Moment Studio</h3>
+          <p data-i18n="photoProfile">
+            📸 Фото және видео · Үлгі
+          </p>
+          <div class="card-bottom">
+            <span class="price" data-i18n="pricePending">
+              Бағасы нақтыланады
+            </span>
+            <button class="small-btn demo-btn"
+                    data-i18n="view">
+              Қарау →
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+
+    <div class="eyebrow" data-i18n="easy">
+      ОҢАЙ ӘРІ ЫҢҒАЙЛЫ
+    </div>
+
+    <h2 data-i18n="howTitle">
+      Қалай жұмыс істейді?
+    </h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3 data-i18n="stepOneTitle">
+          Қызметті табыңыз
+        </h3>
+        <p class="muted" data-i18n="stepOneText">
+          Қалаңызды, қызмет түрін және күнді таңдаңыз.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3 data-i18n="stepTwoTitle">
+          Салыстырыңыз
+        </h3>
+        <p class="muted" data-i18n="stepTwoText">
+          Фотосуреттер мен бағаларды салыстырыңыз.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3 data-i18n="stepThreeTitle">
+          Брондаңыз
+        </h3>
+        <p class="muted" data-i18n="stepThreeText">
+          Болашақта онлайн брондау мүмкіндігі қосылады.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="partner">
+  <div class="container">
+    <div class="cta">
+
+      <div>
+        <div class="eyebrow" data-i18n="partnerEyebrow">
+          БІЗБЕН БІРГЕ ДАМЫҢЫЗ
+        </div>
+
+        <h2 data-i18n="partnerTitle">
+          Өз қызметіңізді танытыңыз
+        </h2>
+
+        <p data-i18n="partnerText">
+          Тойхана, асаба немесе фотографсыз ба?
+          Болашақта өз профиліңізді ашып,
+          клиенттер таба аласыз.
+        </p>
+      </div>
+
+      <button class="gold-btn" id="partnerButton"
+              data-i18n="partnerButton">
+        Серіктес болу →
+      </button>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <div class="logo">✦ SHANYRAQ<span>.</span></div>
+      <p data-i18n="footerText">
+        Ерекше сәттер осында басталады.
+      </p>
+    </div>
+
+    <div>© 2026 Shanyraq Booking</div>
+  </div>
+</footer>
+
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
