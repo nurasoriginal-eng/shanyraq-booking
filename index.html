@@ -3,402 +3,329 @@
 <html lang="kk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#102d29">
-<title>Shanyraq Booking — Premium</title>
+<title>Shanyraq Booking | Тойханалар</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --green:#102d29;
-  --green2:#245447;
-  --gold:#d9b976;
-  --cream:#f8f6f0;
-  --ink:#1a3029;
+ --green:#102d29;
+ --green2:#245447;
+ --gold:#d8b876;
+ --cream:#f8f6f0;
+ --ink:#19352e;
+ --muted:#718079;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  background:var(--cream);
-  color:var(--ink);
-  font-family:Manrope,Arial,sans-serif;
-  overflow-x:hidden;
+ margin:0;
+ background:var(--cream);
+ color:var(--ink);
+ font-family:Manrope,Arial,sans-serif;
+ overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
 button,input,select{font:inherit}
 button{cursor:pointer}
+a{text-decoration:none;color:inherit}
 .container{
-  width:calc(100% - 36px);
-  max-width:1180px;
-  margin:auto;
+ width:calc(100% - 32px);
+ max-width:1150px;
+ margin:auto;
 }
 header{
-  background:var(--green);
-  position:sticky;
-  top:0;
-  z-index:100;
-  border-bottom:1px solid #ffffff20;
+ background:var(--green);
+ color:white;
+ position:sticky;
+ top:0;
+ z-index:50;
+ border-bottom:1px solid #ffffff20;
 }
 .nav{
-  min-height:75px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
+ min-height:75px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:12px;
 }
 .logo{
-  font:700 24px "Playfair Display",Georgia,serif;
-  color:white;
-  white-space:nowrap;
+ font:700 24px "Playfair Display",Georgia,serif;
+ white-space:nowrap;
+ color:white;
 }
 .logo span{color:var(--gold)}
-.links{
-  display:flex;
-  gap:24px;
-  color:white;
-  font-size:13px;
-}
-.links a:hover{color:var(--gold)}
-.actions{
-  display:flex;
-  gap:10px;
-  align-items:center;
+.header-actions{
+ display:flex;
+ align-items:center;
+ gap:10px;
 }
 .languages{
-  display:flex;
-  padding:4px;
-  border-radius:12px;
-  background:#ffffff15;
-  border:1px solid #ffffff25;
+ display:flex;
+ padding:4px;
+ background:#ffffff18;
+ border:1px solid #ffffff25;
+ border-radius:12px;
 }
 .lang{
-  border:0;
-  background:transparent;
-  color:white;
-  padding:9px 12px;
-  border-radius:9px;
-  font-weight:800;
-  font-size:12px;
+ border:0;
+ background:transparent;
+ color:white;
+ padding:9px 12px;
+ border-radius:9px;
+ font-size:12px;
+ font-weight:800;
 }
 .lang.active{
-  background:var(--gold);
-  color:var(--green);
+ background:var(--gold);
+ color:var(--green);
 }
-.gold-btn{
-  border:0;
-  border-radius:12px;
-  background:var(--gold);
-  color:var(--green);
-  padding:15px 22px;
-  font-weight:800;
-  transition:.25s;
-}
-.gold-btn:hover{
-  background:#efd497;
-  transform:translateY(-2px);
+.back{
+ border:1px solid #ffffff45;
+ padding:11px 14px;
+ border-radius:10px;
+ font-size:12px;
+ white-space:nowrap;
 }
 .hero{
-  position:relative;
-  min-height:650px;
-  color:white;
-  display:flex;
-  align-items:center;
-  background:
-    linear-gradient(90deg,
-      rgba(8,30,27,.94),
-      rgba(8,30,27,.60)),
-    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
-}
-.hero-content{
-  padding:85px 0 95px;
-  width:100%;
+ background:linear-gradient(120deg,#102d29,#27604f);
+ color:white;
+ padding:65px 0 85px;
 }
 .eyebrow{
-  font-size:11px;
-  letter-spacing:2px;
-  color:var(--gold);
-  font-weight:800;
-  text-transform:uppercase;
+ color:var(--gold);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:2px;
 }
 .hero h1{
-  font:700 clamp(38px,6vw,76px)/1.13 "Playfair Display",Georgia,serif;
-  max-width:850px;
-  margin:20px 0;
-  overflow-wrap:break-word;
+ font:700 clamp(35px,6vw,60px)/1.15 "Playfair Display",Georgia,serif;
+ margin:20px 0;
+ max-width:850px;
+ overflow-wrap:break-word;
 }
-.hero h1 span{color:var(--gold)}
 .hero p{
-  color:#e0e9e3;
-  max-width:620px;
-  font-size:16px;
-  line-height:1.9;
+ color:#d4e0d9;
+ font-size:15px;
+ line-height:1.9;
+ max-width:700px;
 }
-.search{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr auto;
-  gap:10px;
-  background:white;
-  border-radius:18px;
-  padding:12px;
-  margin-top:35px;
-  max-width:1050px;
-  box-shadow:0 25px 60px #0005;
+.filters{
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:12px;
+ background:white;
+ padding:20px;
+ border-radius:20px;
+ margin-top:-35px;
+ position:relative;
+ box-shadow:0 15px 40px #132e2515;
 }
-.field{
-  padding:8px 13px;
-  min-width:0;
-}
+.field{min-width:0}
 .field label{
-  display:block;
-  color:#718079;
-  font-size:11px;
-  font-weight:800;
-  margin-bottom:8px;
+ display:block;
+ font-size:11px;
+ font-weight:800;
+ color:var(--muted);
+ margin-bottom:9px;
 }
-.field select,.field input{
-  display:block;
-  width:100%;
-  min-width:0;
-  border:0;
-  outline:0;
-  background:white;
-  color:#19332c;
-  font-size:14px;
-  padding:5px 0;
+.field input,.field select{
+ width:100%;
+ min-width:0;
+ padding:13px;
+ border:1px solid #dce5de;
+ border-radius:10px;
+ background:white;
+ color:var(--ink);
+ outline:none;
 }
-.search button{
-  min-width:120px;
+.field input:focus,.field select:focus{
+ border-color:var(--gold);
 }
-.stats{
-  display:flex;
-  gap:35px;
-  flex-wrap:wrap;
-  margin-top:35px;
+.heading{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:15px;
+ margin:42px 0 23px;
+ flex-wrap:wrap;
 }
-.stat strong{
-  display:block;
-  color:var(--gold);
-  font-size:26px;
-}
-.stat small{
-  color:#d0ddd5;
-  font-size:12px;
-}
-.section{padding:85px 0}
-.section h2{
-  font:700 clamp(30px,4vw,45px) "Playfair Display",Georgia,serif;
-  margin:13px 0 20px;
+.heading h2{
+ font:700 clamp(28px,4vw,38px) "Playfair Display",Georgia,serif;
+ margin:0 0 8px;
 }
 .muted{
-  color:#718079;
-  font-size:14px;
-  line-height:1.8;
+ color:var(--muted);
+ font-size:13px;
+ line-height:1.8;
 }
-.categories{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:18px;
-  margin-top:32px;
+.fav-filter{
+ border:1px solid #cad8ce;
+ background:white;
+ padding:13px 16px;
+ border-radius:11px;
+ font-weight:700;
+ color:var(--green);
 }
-.category{
-  min-height:285px;
-  border-radius:20px;
-  position:relative;
-  overflow:hidden;
-  background-position:center;
-  background-size:cover;
-  display:flex;
-  align-items:flex-end;
-  padding:22px;
-  color:white;
-  transition:.3s;
+.fav-filter.active{
+ background:#e8f2eb;
+ border-color:#2b7755;
 }
-.category:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(0deg,#061c19f0,transparent 85%);
+.notice{
+ background:#fff7dd;
+ border:1px solid #eedca1;
+ padding:15px 18px;
+ border-radius:12px;
+ font-size:12px;
+ line-height:1.8;
+ margin-bottom:25px;
 }
-.category:hover{
-  transform:translateY(-7px);
-}
-.category div{position:relative}
-.category h3{
-  font-size:20px;
-  margin:0 0 8px;
-}
-.category p{
-  font-size:12px;
-  margin:0;
-  color:#e4eae5;
-}
-.cat1{
-  background-image:url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=700&q=80");
-}
-.cat2{
-  background-image:url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80");
-}
-.cat3{
-  background-image:url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=80");
-}
-.cat4{
-  background-image:url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80");
-}
-.dark{
-  background:var(--green);
-  color:white;
-}
-.dark .muted{color:#b7c8c1}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
-  margin-top:30px;
+.grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:23px;
+ padding-bottom:65px;
 }
 .card{
-  background:white;
-  color:var(--ink);
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 10px 35px #00000015;
-  transition:.3s;
+ background:white;
+ border-radius:20px;
+ overflow:hidden;
+ box-shadow:0 8px 30px #102d2910;
+ transition:.3s;
 }
-.card:hover{transform:translateY(-6px)}
-.card-img{
-  height:210px;
-  background-position:center;
-  background-size:cover;
-  position:relative;
+.card:hover{transform:translateY(-5px)}
+.photo{
+ height:215px;
+ background-size:cover;
+ background-position:center;
+ position:relative;
 }
-.card-img span{
-  position:absolute;
-  top:14px;
-  left:14px;
-  background:white;
-  border-radius:20px;
-  padding:8px 12px;
-  font-size:11px;
-  font-weight:800;
+.tag{
+ position:absolute;
+ top:15px;
+ left:15px;
+ background:white;
+ padding:8px 12px;
+ border-radius:25px;
+ font-size:11px;
+ font-weight:800;
 }
+.heart{
+ position:absolute;
+ top:13px;
+ right:14px;
+ border:0;
+ background:white;
+ border-radius:50%;
+ width:42px;
+ height:42px;
+ font-size:24px;
+ color:#888;
+}
+.heart.saved{color:#e44869}
 .card-body{padding:22px}
-.card-body h3{margin:0 0 10px}
-.card-body p{
-  color:#718079;
-  font-size:13px;
+.card-body h3{
+ font-size:21px;
+ margin:0 0 10px;
 }
-.card-bottom{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-top:22px;
+.details{
+ color:var(--muted);
+ font-size:13px;
+ line-height:1.9;
 }
 .price{
-  color:var(--green2);
-  font-size:13px;
-  font-weight:800;
+ color:#194e3e;
+ font-size:21px;
+ font-weight:800;
+ margin:18px 0;
 }
-.small-btn{
-  background:var(--green);
-  color:white;
-  border:0;
-  padding:12px 15px;
-  border-radius:10px;
-  font-size:12px;
-  font-weight:800;
+.price small{
+ color:var(--muted);
+ font-size:11px;
+ font-weight:500;
 }
-.steps{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
-  margin-top:30px;
+.card-actions{
+ display:flex;
+ gap:9px;
 }
-.step{
-  background:white;
-  padding:30px;
-  border-radius:20px;
+.btn{
+ border:0;
+ border-radius:10px;
+ padding:13px 15px;
+ font-weight:800;
+ font-size:12px;
 }
-.number{
-  color:var(--gold);
-  font:700 45px Georgia,serif;
+.primary{
+ background:var(--green);
+ color:white;
+ flex:1;
 }
-.step h3{margin:16px 0}
-.cta{
-  background:linear-gradient(120deg,#245447,#102d29);
-  color:white;
-  border-radius:24px;
-  padding:55px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
+.secondary{
+ background:#f0eee6;
+ color:var(--green);
 }
-.cta h2{margin:12px 0}
-.cta p{
-  color:#c5d3cc;
-  line-height:1.8;
+.empty{
+ text-align:center;
+ padding:45px;
+ color:var(--muted);
 }
+dialog{
+ border:0;
+ border-radius:20px;
+ width:calc(100% - 30px);
+ max-width:450px;
+ padding:25px;
+ box-shadow:0 30px 100px #0005;
+}
+dialog::backdrop{background:#051a17aa}
+dialog h2{
+ font:700 27px "Playfair Display",Georgia,serif;
+}
+dialog label{
+ display:block;
+ font-size:12px;
+ font-weight:800;
+ margin:16px 0 8px;
+}
+dialog input{
+ display:block;
+ width:100%;
+ padding:13px;
+ border:1px solid #cddbd1;
+ border-radius:10px;
+}
+.dialog-actions{
+ display:flex;
+ gap:10px;
+ margin-top:22px;
+}
+.dialog-actions button{flex:1}
 footer{
-  background:#081e1b;
-  color:#b8c6c0;
-  padding:35px 0;
-  font-size:12px;
+ background:#081e1b;
+ color:#b8c6c0;
+ padding:30px;
+ text-align:center;
+ font-size:12px;
 }
-.footer-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
+@media(max-width:850px){
+ .filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media(max-width:950px){
-  .links{display:none}
-  .categories{grid-template-columns:repeat(2,1fr)}
-  .cards{grid-template-columns:repeat(2,1fr)}
-  .search{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:600px){
-  .container{width:calc(100% - 32px)}
-  .nav{min-height:68px}
-  .logo{font-size:19px}
-  .lang{padding:8px 10px}
-  .nav-partner{display:none}
-  .hero{min-height:auto}
-  .hero-content{padding:65px 0 75px}
-  .hero h1{
-    font-size:clamp(35px,9vw,48px);
-    line-height:1.15;
-  }
-  .hero p{font-size:14px}
-  .search{
-    grid-template-columns:minmax(0,1fr);
-    gap:4px;
-    padding:13px;
-    border-radius:17px;
-  }
-  .field{
-    padding:10px;
-    border-bottom:1px solid #eee;
-  }
-  .search button{
-    width:100%;
-    margin-top:7px;
-  }
-  .stats{gap:22px}
-  .stat strong{font-size:22px}
-  .section{padding:60px 0}
-  .categories,.cards,.steps{
-    grid-template-columns:minmax(0,1fr);
-  }
-  .category{min-height:240px}
-  .cta{
-    padding:30px 24px;
-    display:block;
-  }
-  .cta button{margin-top:18px}
+@media(max-width:570px){
+ .nav{min-height:70px}
+ .logo{font-size:18px}
+ .header-actions{gap:6px}
+ .lang{padding:8px}
+ .back{padding:9px;font-size:10px}
+ .hero{padding:45px 0 75px}
+ .hero h1{font-size:clamp(34px,9vw,45px)}
+ .hero p{font-size:14px}
+ .filters,.grid{grid-template-columns:minmax(0,1fr)}
+ .filters{padding:17px}
+ .photo{height:235px}
+ .heading{margin-top:35px}
+ .card-actions{flex-wrap:wrap}
 }
 </style>
 </head>
@@ -406,302 +333,500 @@ footer{
 <body>
 
 <header>
-<div class="container nav">
-  <a class="logo" href="index.html">
-    ✦ SHANYRAQ<span>.</span>
+ <div class="container nav">
+  <a href="index.html" class="logo">
+   ✦ SHANYRAQ<span>.</span>
   </a>
 
-  <nav class="links">
-    <a href="venues.html" data-kk="Тойханалар" data-ru="Банкетные залы">Тойханалар</a>
-    <a href="#services" data-kk="Қызметтер" data-ru="Услуги">Қызметтер</a>
-    <a href="#how" data-kk="Қалай жұмыс істейді?" data-ru="Как это работает?">Қалай жұмыс істейді?</a>
-  </nav>
+  <div class="header-actions">
+   <div class="languages">
+    <button id="kz" class="lang active" type="button">
+     KZ
+    </button>
+    <button id="ru" class="lang" type="button">
+     RU
+    </button>
+   </div>
 
-  <div class="actions">
-    <div class="languages">
-      <button class="lang active" id="kz" type="button">🇰🇿 KZ</button>
-      <button class="lang" id="ru" type="button">🇷🇺 RU</button>
-    </div>
-    <a href="#partner" class="gold-btn nav-partner"
-       data-kk="+ Қызмет қосу"
-       data-ru="+ Добавить услугу">+ Қызмет қосу</a>
+   <a href="index.html" class="back"
+      data-kk="← Басты бет"
+      data-ru="← Главная">
+    ← Басты бет
+   </a>
   </div>
-</div>
+ </div>
 </header>
 
-<main>
-
 <section class="hero">
-<div class="container hero-content">
-  <div class="eyebrow"
-       data-kk="✦ Қазақстандағы мерекелік платформа"
-       data-ru="✦ Платформа мероприятий Казахстана">
-    ✦ Қазақстандағы мерекелік платформа
+ <div class="container">
+  <div class="eyebrow">
+   ✦ SHANYRAQ BOOKING
   </div>
 
-  <h1 data-kk="Ерекше сәттер <span>осында</span> басталады."
-      data-ru="Особенные моменты начинаются <span>здесь.</span>">
-    Ерекше сәттер <span>осында</span> басталады.
+  <h1 data-kk="Армандаған тойханаңызды табыңыз"
+      data-ru="Найдите банкетный зал своей мечты">
+   Армандаған тойханаңызды табыңыз
   </h1>
 
-  <p data-kk="Армандаған тойыңызға арналған үздік орындар мен мамандарды бір жерден табыңыз."
-     data-ru="Найдите лучшие площадки и специалистов для вашего торжества в одном месте.">
-    Армандаған тойыңызға арналған үздік орындар мен мамандарды бір жерден табыңыз.
+  <p data-kk="Қазақстандағы тойханаларды іздеңіз, бағаларын салыстырыңыз және өзіңізге ыңғайлы күнді таңдаңыз."
+     data-ru="Ищите банкетные залы Казахстана, сравнивайте цены и выбирайте удобную дату.">
+   Қазақстандағы тойханаларды іздеңіз,
+   бағаларын салыстырыңыз және өзіңізге
+   ыңғайлы күнді таңдаңыз.
   </p>
-
-  <form class="search" id="searchForm">
-    <div class="field">
-      <label data-kk="ҚАЛА" data-ru="ГОРОД">ҚАЛА</label>
-      <select id="city">
-        <option value="Тараз">Тараз</option>
-        <option value="Алматы">Алматы</option>
-        <option value="Астана">Астана</option>
-        <option value="Шымкент">Шымкент</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label data-kk="ҚЫЗМЕТ ТҮРІ" data-ru="ТИП УСЛУГИ">ҚЫЗМЕТ ТҮРІ</label>
-      <select id="service">
-        <option value="venues" data-kk="Тойханалар" data-ru="Банкетные залы">Тойханалар</option>
-        <option value="hosts" data-kk="Асабалар" data-ru="Ведущие">Асабалар</option>
-        <option value="photo" data-kk="Фотографтар" data-ru="Фотографы">Фотографтар</option>
-        <option value="decor" data-kk="Безендіру" data-ru="Оформление">Безендіру</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label data-kk="ІС-ШАРА КҮНІ" data-ru="ДАТА МЕРОПРИЯТИЯ">ІС-ШАРА КҮНІ</label>
-      <input id="date" type="date">
-    </div>
-
-    <button class="gold-btn" type="submit"
-            data-kk="Іздеу →" data-ru="Поиск →">Іздеу →</button>
-  </form>
-
-  <div class="stats">
-    <div class="stat">
-      <strong>01</strong>
-      <small data-kk="Бірыңғай платформа" data-ru="Единая платформа">Бірыңғай платформа</small>
-    </div>
-    <div class="stat">
-      <strong>24/7</strong>
-      <small data-kk="Қызметтерді қарау" data-ru="Просмотр услуг">Қызметтерді қарау</small>
-    </div>
-    <div class="stat">
-      <strong>100%</strong>
-      <small data-kk="Тегін демо" data-ru="Бесплатное демо">Тегін демо</small>
-    </div>
-  </div>
-</div>
+ </div>
 </section>
 
-<section class="section" id="services">
-<div class="container">
-  <div class="eyebrow" data-kk="БАРЛЫҒЫ БІР ЖЕРДЕ" data-ru="ВСЁ В ОДНОМ МЕСТЕ">БАРЛЫҒЫ БІР ЖЕРДЕ</div>
-  <h2 data-kk="Қызметтер әлемі" data-ru="Мир услуг">Қызметтер әлемі</h2>
-  <p class="muted" data-kk="Ерекше күніңізге қажет нәрсенің бәрі." data-ru="Всё необходимое для вашего особенного дня.">Ерекше күніңізге қажет нәрсенің бәрі.</p>
+<main class="container">
 
-  <div class="categories">
-    <a href="venues.html" class="category cat1">
-      <div>
-        <h3 data-kk="🏛️ Тойханалар" data-ru="🏛️ Банкетные залы">🏛️ Тойханалар</h3>
-        <p data-kk="Керемет мерекелік орындар →" data-ru="Лучшие площадки для праздника →">Керемет мерекелік орындар →</p>
-      </div>
-    </a>
+<div class="filters">
 
-    <a href="#popular" class="category cat2">
-      <div>
-        <h3 data-kk="🎤 Асабалар" data-ru="🎤 Ведущие">🎤 Асабалар</h3>
-        <p data-kk="Кәсіби жүргізушілер →" data-ru="Профессиональные ведущие →">Кәсіби жүргізушілер →</p>
-      </div>
-    </a>
+ <div class="field">
+  <label data-kk="ҚАЛА" data-ru="ГОРОД">
+   ҚАЛА
+  </label>
+  <select id="city">
+   <option value=""
+    data-kk="Барлық қалалар"
+    data-ru="Все города">Барлық қалалар</option>
+   <option value="Тараз">Тараз</option>
+   <option value="Алматы">Алматы</option>
+   <option value="Астана">Астана</option>
+   <option value="Шымкент">Шымкент</option>
+  </select>
+ </div>
 
-    <a href="#popular" class="category cat3">
-      <div>
-        <h3 data-kk="📸 Фотографтар" data-ru="📸 Фотографы">📸 Фотографтар</h3>
-        <p data-kk="Естен кетпес кадрлар →" data-ru="Незабываемые кадры →">Естен кетпес кадрлар →</p>
-      </div>
-    </a>
+ <div class="field">
+  <label data-kk="БІР АДАМҒА БАҒА"
+         data-ru="ЦЕНА ЗА ЧЕЛОВЕКА">
+   БІР АДАМҒА БАҒА
+  </label>
+  <select id="price">
+   <option value=""
+    data-kk="Кез келген"
+    data-ru="Любая">Кез келген</option>
+   <option value="10000"
+    data-kk="До 10 000 ₸"
+    data-ru="До 10 000 ₸">10 000 ₸ дейін</option>
+   <option value="15000"
+    data-kk="15 000 ₸ дейін"
+    data-ru="До 15 000 ₸">15 000 ₸ дейін</option>
+   <option value="20000"
+    data-kk="20 000 ₸ дейін"
+    data-ru="До 20 000 ₸">20 000 ₸ дейін</option>
+  </select>
+ </div>
 
-    <a href="#popular" class="category cat4">
-      <div>
-        <h3 data-kk="✨ Безендіру" data-ru="✨ Оформление">✨ Безендіру</h3>
-        <p data-kk="Сәнді декорациялар →" data-ru="Стильные декорации →">Сәнді декорациялар →</p>
-      </div>
-    </a>
-  </div>
+ <div class="field">
+  <label data-kk="ҚОНАҚ САНЫ"
+         data-ru="КОЛИЧЕСТВО ГОСТЕЙ">
+   ҚОНАҚ САНЫ
+  </label>
+  <input type="number" id="guests"
+   min="1" placeholder="150">
+ </div>
+
+ <div class="field">
+  <label data-kk="ТОЙ КҮНІ"
+         data-ru="ДАТА МЕРОПРИЯТИЯ">
+   ТОЙ КҮНІ
+  </label>
+  <input type="date" id="date">
+ </div>
+
 </div>
-</section>
 
-<section class="section dark" id="popular">
-<div class="container">
-  <div class="eyebrow" data-kk="АРНАЙЫ ТАҢДАУ" data-ru="НАШ ВЫБОР">АРНАЙЫ ТАҢДАУ</div>
-  <h2 data-kk="Танымал ұсыныстар" data-ru="Популярные предложения">Танымал ұсыныстар</h2>
-  <p class="muted" data-kk="Төмендегі ұсыныстар — демонстрациялық үлгілер." data-ru="Предложения ниже — демонстрационные примеры.">Төмендегі ұсыныстар — демонстрациялық үлгілер.</p>
+<div class="heading">
+ <div>
+  <h2 data-kk="Тойханалар каталогы"
+      data-ru="Каталог банкетных залов">
+   Тойханалар каталогы
+  </h2>
+  <p class="muted" id="count"></p>
+ </div>
 
-  <div class="cards">
-    <article class="card">
-      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80')">
-        <span>✦ DEMO</span>
-      </div>
-      <div class="card-body">
-        <h3>Royal Garden</h3>
-        <p>📍 Тараз · Банкет залы</p>
-        <div class="card-bottom">
-          <span class="price" data-kk="Бағасы нақтыланады" data-ru="Цена уточняется">Бағасы нақтыланады</span>
-          <a class="small-btn" href="venues.html" data-kk="Қарау →" data-ru="Смотреть →">Қарау →</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80')">
-        <span>✦ DEMO</span>
-      </div>
-      <div class="card-body">
-        <h3>Event Host</h3>
-        <p data-kk="🎤 Асаба · Үлгі профиль" data-ru="🎤 Ведущий · Демо-профиль">🎤 Асаба · Үлгі профиль</p>
-        <div class="card-bottom">
-          <span class="price" data-kk="Бағасы нақтыланады" data-ru="Цена уточняется">Бағасы нақтыланады</span>
-          <button class="small-btn demo-btn" data-kk="Қарау →" data-ru="Смотреть →">Қарау →</button>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80')">
-        <span>✦ DEMO</span>
-      </div>
-      <div class="card-body">
-        <h3>Moment Studio</h3>
-        <p data-kk="📸 Фото және видео · Үлгі" data-ru="📸 Фото и видео · Демо">📸 Фото және видео · Үлгі</p>
-        <div class="card-bottom">
-          <span class="price" data-kk="Бағасы нақтыланады" data-ru="Цена уточняется">Бағасы нақтыланады</span>
-          <button class="small-btn demo-btn" data-kk="Қарау →" data-ru="Смотреть →">Қарау →</button>
-        </div>
-      </div>
-    </article>
-  </div>
+ <button id="favFilter" class="fav-filter">
+  ♡ Таңдаулылар
+ </button>
 </div>
-</section>
 
-<section class="section" id="how">
-<div class="container">
-  <div class="eyebrow" data-kk="ОҢАЙ ӘРІ ЫҢҒАЙЛЫ" data-ru="ПРОСТО И УДОБНО">ОҢАЙ ӘРІ ЫҢҒАЙЛЫ</div>
-  <h2 data-kk="Қалай жұмыс істейді?" data-ru="Как это работает?">Қалай жұмыс істейді?</h2>
-
-  <div class="steps">
-    <div class="step">
-      <div class="number">01</div>
-      <h3 data-kk="Қызметті табыңыз" data-ru="Найдите услугу">Қызметті табыңыз</h3>
-      <p class="muted" data-kk="Қалаңызды, қызмет түрін және күнді таңдаңыз." data-ru="Выберите город, услугу и дату.">Қалаңызды, қызмет түрін және күнді таңдаңыз.</p>
-    </div>
-
-    <div class="step">
-      <div class="number">02</div>
-      <h3 data-kk="Салыстырыңыз" data-ru="Сравните">Салыстырыңыз</h3>
-      <p class="muted" data-kk="Фотосуреттер мен бағаларды салыстырыңыз." data-ru="Сравните фотографии и цены.">Фотосуреттер мен бағаларды салыстырыңыз.</p>
-    </div>
-
-    <div class="step">
-      <div class="number">03</div>
-      <h3 data-kk="Брондаңыз" data-ru="Забронируйте">Брондаңыз</h3>
-      <p class="muted" data-kk="Онлайн брондау жүйесі келесі кезеңде қосылады." data-ru="Онлайн-бронирование появится на следующем этапе.">Онлайн брондау жүйесі келесі кезеңде қосылады.</p>
-    </div>
-  </div>
+<div class="notice"
+ data-kk="⚠️ Қазіргі тойханалар мен бағалар — демонстрациялық мысалдар. Нақты брондау жүйесі кейін қосылады."
+ data-ru="⚠️ Банкетные залы и цены сейчас являются демонстрационными примерами. Реальное бронирование будет добавлено позже.">
+ ⚠️ Қазіргі тойханалар мен бағалар —
+ демонстрациялық мысалдар.
+ Нақты брондау жүйесі кейін қосылады.
 </div>
-</section>
 
-<section class="section" id="partner">
-<div class="container">
-  <div class="cta">
-    <div>
-      <div class="eyebrow" data-kk="БІЗБЕН БІРГЕ ДАМЫҢЫЗ" data-ru="РАЗВИВАЙТЕСЬ С НАМИ">БІЗБЕН БІРГЕ ДАМЫҢЫЗ</div>
-      <h2 data-kk="Өз қызметіңізді танытыңыз" data-ru="Расскажите о своих услугах">Өз қызметіңізді танытыңыз</h2>
-      <p data-kk="Тойхана, асаба немесе фотографсыз ба? Болашақта өз профиліңізді ашып, клиенттер таба аласыз." data-ru="У вас банкетный зал? Вы ведущий или фотограф? В будущем вы сможете создать профиль и находить клиентов.">Тойхана, асаба немесе фотографсыз ба? Болашақта өз профиліңізді ашып, клиенттер таба аласыз.</p>
-    </div>
-    <button class="gold-btn" id="partnerBtn" data-kk="Серіктес болу →" data-ru="Стать партнёром →">Серіктес болу →</button>
-  </div>
+<div id="cards" class="grid"></div>
+
+<div id="empty" class="empty" hidden
+ data-kk="Сүзгіге сәйкес тойхана табылмады."
+ data-ru="По вашему запросу ничего не найдено.">
+ Сүзгіге сәйкес тойхана табылмады.
 </div>
-</section>
 
 </main>
 
-<footer>
-<div class="container footer-row">
-  <div>
-    <div class="logo">✦ SHANYRAQ<span>.</span></div>
-    <p data-kk="Ерекше сәттер осында басталады." data-ru="Особенные моменты начинаются здесь.">Ерекше сәттер осында басталады.</p>
+<dialog id="bookingDialog">
+ <form id="bookingForm">
+
+  <h2 id="bookingTitle">Брондау</h2>
+
+  <p class="muted"
+   data-kk="Демонстрациялық өтінім"
+   data-ru="Демонстрационная заявка">
+   Демонстрациялық өтінім
+  </p>
+
+  <label data-kk="Аты-жөніңіз"
+         data-ru="Ваше имя">
+   Аты-жөніңіз
+  </label>
+  <input id="customerName" required maxlength="80">
+
+  <label data-kk="Телефон"
+         data-ru="Телефон">
+   Телефон
+  </label>
+  <input id="customerPhone" type="tel" required>
+
+  <label data-kk="Той күні"
+         data-ru="Дата мероприятия">
+   Той күні
+  </label>
+  <input id="bookingDate" type="date" required>
+
+  <div class="dialog-actions">
+   <button type="button" id="closeDialog"
+    class="btn secondary"
+    data-kk="Жабу" data-ru="Закрыть">
+    Жабу
+   </button>
+
+   <button type="submit" class="btn primary"
+    data-kk="Демо өтінім"
+    data-ru="Демо-заявка">
+    Демо өтінім
+   </button>
   </div>
-  <div>© 2026 Shanyraq Booking · Prototype</div>
-</div>
+
+ </form>
+</dialog>
+
+<footer>
+ © 2026 Shanyraq Booking · Premium Platform
 </footer>
 
 <script>
-let currentLang = localStorage.getItem("shanyraq_lang") || "kk";
+const venues = [
+ {
+  id:1,
+  name:"Royal Garden",
+  city:"Тараз",
+  price:12000,
+  capacity:300,
+  image:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:2,
+  name:"Golden Palace",
+  city:"Алматы",
+  price:18000,
+  capacity:450,
+  image:"https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:3,
+  name:"Samal Hall",
+  city:"Шымкент",
+  price:9000,
+  capacity:220,
+  image:"https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:4,
+  name:"Emerald Event",
+  city:"Астана",
+  price:16000,
+  capacity:350,
+  image:"https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:5,
+  name:"Altyn Saray",
+  city:"Тараз",
+  price:10500,
+  capacity:180,
+  image:"https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=80"
+ },
+ {
+  id:6,
+  name:"Grand Celebration",
+  city:"Алматы",
+  price:20000,
+  capacity:500,
+  image:"https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80"
+ }
+];
 
-function setLanguage(lang){
-  currentLang = lang;
-  localStorage.setItem("shanyraq_lang",lang);
-  document.documentElement.lang = lang;
+const $ = id => document.getElementById(id);
 
-  document.querySelectorAll("[data-kk][data-ru]").forEach(el=>{
-    el.innerHTML = el.getAttribute("data-"+lang);
-  });
+const format = n =>
+ new Intl.NumberFormat("kk-KZ").format(n);
 
-  document.getElementById("kz").classList.toggle("active",lang==="kk");
-  document.getElementById("ru").classList.toggle("active",lang==="ru");
+let currentLang =
+ localStorage.getItem("shanyraq_lang") || "kk";
+
+if (!["kk","ru"].includes(currentLang)) {
+ currentLang = "kk";
 }
 
-document.getElementById("kz").onclick=()=>setLanguage("kk");
-document.getElementById("ru").onclick=()=>setLanguage("ru");
+let saved = new Set(
+ JSON.parse(
+  localStorage.getItem("shanyraq_favs") || "[]"
+ )
+);
+
+let onlySaved = false;
+let selectedVenue = null;
+
+const now = new Date();
+const localToday = new Date(
+ now.getTime() - now.getTimezoneOffset()*60000
+).toISOString().slice(0,10);
+
+$("date").min = localToday;
+$("bookingDate").min = localToday;
+
+const words = {
+ kk:{
+  found:"ұсыныс табылды",
+  favorites:"♡ Таңдаулылар",
+  city:"Қала",
+  capacity:"адамға дейін",
+  perPerson:"/ адамға",
+  book:"📅 Брондау",
+  more:"Толығырақ",
+  demo:"✦ Демо",
+  saved:"Демо өтінім сақталды. Нақты тойханаға жіберілген жоқ."
+ },
+ ru:{
+  found:"предложений найдено",
+  favorites:"♡ Избранное",
+  city:"Город",
+  capacity:"человек",
+  perPerson:"/ за человека",
+  book:"📅 Бронировать",
+  more:"Подробнее",
+  demo:"✦ Демо",
+  saved:"Демо-заявка сохранена. В реальный банкетный зал она не отправлена."
+ }
+};
+
+function setLanguage(lang) {
+ currentLang = lang;
+ localStorage.setItem("shanyraq_lang",lang);
+ document.documentElement.lang = lang;
+
+ document.querySelectorAll("[data-kk][data-ru]")
+  .forEach(el => {
+   el.textContent = el.getAttribute("data-"+lang);
+  });
+
+ $("kz").classList.toggle("active",lang==="kk");
+ $("ru").classList.toggle("active",lang==="ru");
+
+ $("favFilter").textContent =
+  words[lang].favorites;
+
+ render();
+}
+
+$("kz").onclick = () => setLanguage("kk");
+$("ru").onclick = () => setLanguage("ru");
+
+function render() {
+ const t = words[currentLang];
+
+ const city = $("city").value;
+ const maxPrice = Number($("price").value) || Infinity;
+ const guests = Number($("guests").value) || 0;
+
+ const filtered = venues.filter(v =>
+  (!city || v.city === city) &&
+  v.price <= maxPrice &&
+  v.capacity >= guests &&
+  (!onlySaved || saved.has(v.id))
+ );
+
+ $("count").textContent =
+  filtered.length + " " + t.found;
+
+ $("cards").innerHTML = filtered.map(v => `
+  <article class="card">
+
+   <div class="photo"
+    style="background-image:url('${v.image}')">
+
+    <span class="tag">${t.demo}</span>
+
+    <button class="heart
+     ${saved.has(v.id) ? "saved" : ""}"
+     data-fav="${v.id}">
+     ${saved.has(v.id) ? "♥" : "♡"}
+    </button>
+   </div>
+
+   <div class="card-body">
+    <h3>${v.name}</h3>
+
+    <div class="details">
+     📍 ${v.city}<br>
+     👥 ${v.capacity} ${t.capacity}
+    </div>
+
+    <div class="price">
+     ${format(v.price)} ₸
+     <small>${t.perPerson}</small>
+    </div>
+
+    <div class="card-actions">
+     <button class="btn primary"
+      data-book="${v.id}">
+      ${t.book}
+     </button>
+
+     <button class="btn secondary"
+      data-info="${v.id}">
+      ${t.more}
+     </button>
+    </div>
+   </div>
+  </article>
+ `).join("");
+
+ $("empty").hidden = filtered.length > 0;
+}
+
+["city","price","guests","date"].forEach(id => {
+ $(id).addEventListener("input",render);
+});
+
+$("favFilter").onclick = () => {
+ onlySaved = !onlySaved;
+ $("favFilter").classList.toggle(
+  "active",onlySaved
+ );
+ render();
+};
+
+$("cards").addEventListener("click",e => {
+
+ const fav = e.target.closest("[data-fav]");
+ const book = e.target.closest("[data-book]");
+ const info = e.target.closest("[data-info]");
+
+ if (fav) {
+  const id = Number(fav.dataset.fav);
+
+  if (saved.has(id)) saved.delete(id);
+  else saved.add(id);
+
+  localStorage.setItem(
+   "shanyraq_favs",
+   JSON.stringify([...saved])
+  );
+
+  render();
+ }
+
+ if (info) {
+  const v = venues.find(
+   x => x.id === Number(info.dataset.info)
+  );
+
+  const t = words[currentLang];
+
+  alert(
+   v.name + "\n" +
+   t.city + ": " + v.city + "\n" +
+   v.capacity + " " + t.capacity + "\n" +
+   format(v.price) + " ₸ " + t.perPerson
+  );
+ }
+
+ if (book) {
+  selectedVenue = venues.find(
+   x => x.id === Number(book.dataset.book)
+  );
+
+  $("bookingTitle").textContent =
+   selectedVenue.name;
+
+  $("bookingDate").value =
+   $("date").value || localToday;
+
+  $("bookingDialog").showModal();
+ }
+});
+
+$("closeDialog").onclick = () => {
+ $("bookingDialog").close();
+};
+
+$("bookingForm").onsubmit = e => {
+ e.preventDefault();
+
+ const booking = {
+  venue:selectedVenue.name,
+  name:$("customerName").value,
+  phone:$("customerPhone").value,
+  date:$("bookingDate").value,
+  createdAt:new Date().toISOString()
+ };
+
+ const bookings = JSON.parse(
+  localStorage.getItem("shanyraq_demo_bookings")
+  || "[]"
+ );
+
+ bookings.push(booking);
+
+ localStorage.setItem(
+  "shanyraq_demo_bookings",
+  JSON.stringify(bookings)
+ );
+
+ $("bookingDialog").close();
+ $("bookingForm").reset();
+
+ alert(words[currentLang].saved);
+};
+
+const params = new URLSearchParams(location.search);
+const requestedCity = params.get("city");
+const requestedDate = params.get("date");
+
+if (
+ requestedCity &&
+ [...$("city").options].some(
+  o => o.value === requestedCity
+ )
+) {
+ $("city").value = requestedCity;
+}
+
+if (
+ requestedDate &&
+ /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) &&
+ requestedDate >= localToday
+) {
+ $("date").value = requestedDate;
+}
 
 setLanguage(currentLang);
-
-const dateInput=document.getElementById("date");
-const now=new Date();
-const today=new Date(now.getTime()-now.getTimezoneOffset()*60000)
-  .toISOString().slice(0,10);
-dateInput.min=today;
-
-document.getElementById("searchForm").addEventListener("submit",e=>{
-  e.preventDefault();
-
-  const city=document.getElementById("city").value;
-  const service=document.getElementById("service").value;
-  const date=dateInput.value;
-
-  if(!date){
-    alert(currentLang==="kk"?
-      "Алдымен іс-шара күнін таңдаңыз!":
-      "Сначала выберите дату мероприятия!");
-    return;
-  }
-
-  if(service==="venues"){
-    const params=new URLSearchParams({city,date});
-    location.href="venues.html?"+params.toString();
-  }else{
-    alert(currentLang==="kk"?
-      "Бұл қызмет келесі кезеңде қосылады.":
-      "Эта услуга появится на следующем этапе.");
-  }
-});
-
-document.querySelectorAll(".demo-btn").forEach(btn=>{
-  btn.onclick=()=>alert(currentLang==="kk"?
-    "Бұл әзірге демо профиль.":
-    "Это демонстрационный профиль.");
-});
-
-document.getElementById("partnerBtn").onclick=()=>{
-  alert(currentLang==="kk"?
-    "Серіктестерді тіркеу жүйесін келесі кезеңде қосамыз.":
-    "Регистрацию партнёров добавим на следующем этапе.");
-};
 </script>
 
 </body>
 </html>
-
